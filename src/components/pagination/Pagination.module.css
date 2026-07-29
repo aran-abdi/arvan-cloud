@@ -1,0 +1,96 @@
+.root {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* ─── Chevron button ──────────────────────────── */
+.chevron {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--pagination-item-size);
+  height: var(--pagination-item-size);
+  box-sizing: border-box;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  padding: 0;
+  border-radius: var(--pagination-item-radius);
+  outline: none;
+}
+
+.chevron:disabled {
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* ─── Page item button ───────────────────────── */
+.item {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  min-width: var(--pagination-item-size);
+  height: var(--pagination-item-size);
+  border-radius: var(--pagination-item-radius);
+  padding: 0 var(--pagination-item-padding-x);
+  border: 0;
+  outline: none;
+  cursor: pointer;
+  font-family: var(--font-inter), Inter, sans-serif;
+  background: var(--neutral-bg1-default);
+  color: var(--neutral-fg1-default);
+  transition:
+    background 120ms ease,
+    color 120ms ease;
+}
+
+.item:hover:not(:disabled):not([data-selected="true"]) {
+  background: var(--neutral-bg1-hover);
+  color: var(--neutral-fg1-hover);
+}
+
+.item:active:not(:disabled):not([data-selected="true"]) {
+  background: var(--neutral-bg1-press);
+  color: var(--neutral-fg1-press);
+}
+
+.item[data-selected="true"] {
+  background: var(--primary-bg2-default);
+  color: var(--neutral-fg3-default);
+}
+
+.item:disabled {
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.item:disabled:not([data-selected="true"]) {
+  background: var(--neutral-bg1-default);
+  color: var(--neutral-fg1-disable);
+}
+
+.item:disabled[data-selected="true"] {
+  background: var(--primary-bg2-disable);
+  color: var(--neutral-fg3-default);
+}
+
+/* ─── Ellipsis ───────────────────────────────── */
+.ellipsis {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: var(--pagination-item-size);
+  height: var(--pagination-item-size);
+  box-sizing: border-box;
+  padding: 0 var(--pagination-item-padding-x);
+  font-family: var(--font-inter), Inter, sans-serif;
+  background: transparent;
+  color: var(--neutral-fg1-default);
+  user-select: none;
+}
+
+.ellipsis[data-disabled="true"] {
+  color: var(--neutral-fg1-disable);
+}

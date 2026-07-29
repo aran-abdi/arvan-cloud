@@ -3,3 +3,7 @@ export { CheckIcon } from "./CheckIcon";
 export { IndeterminateIcon } from "./IndeterminateIcon";
 export { CircleCheckIcon } from "./CircleCheckIcon";
 export { SpinnerIcon } from "./SpinnerIcon";
+export { ChevronLeftDefaultIcon } from "./ChevronLeftDefaultIcon";
+export { ChevronLeftDisabledIcon } from "./ChevronLeftDisabledIcon";
+export { ChevronRightDefaultIcon } from "./ChevronRightDefaultIcon";
+export { ChevronRightDisabledIcon } from "./ChevronRightDisabledIcon";

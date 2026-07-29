@@ -73,6 +73,11 @@
   /* Toast */
   --toast-shadow: 0px 8px 40px 0px #2533433D;
 
+  /* Pagination */
+  --pagination-item-size: 32px;
+  --pagination-item-radius: 8px;
+  --pagination-item-padding-x: 8px;
+
   /* Menu */
   --menu-element-width: 243px;
   --menu-item-height: 36px;

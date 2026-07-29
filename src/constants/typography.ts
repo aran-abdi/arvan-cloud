@@ -5,6 +5,7 @@ export const LETTER_SPACING = {
 
 export const FONT_WEIGHT = {
   regular: 400,
+  medium450: 450,
   semibold: 600,
 } as const;
 

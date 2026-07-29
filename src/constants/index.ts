@@ -7,3 +7,4 @@ export * from "./checkbox";
 export * from "./toast";
 export * from "./button";
 export * from "./menu";
+export * from "./pagination";
