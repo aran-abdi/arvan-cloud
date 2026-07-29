@@ -25,6 +25,10 @@
   --error-bg2-hover: #ab181a;
   --error-bg2-press: #801213;
   --error-bg2-disable: #efa5a6;
+  --pt-info-t2-fg1-default: #0172B4;
+  --pt-info-t2-fg1-hover: #015687;
+  --pt-info-t2-fg1-press: #00395A;
+  --pt-info-t2-fg1-disable: #99D2F3;
   --success-fg1-default: #17B24A;
   --success-bg1-default: #E3F6E9;
   --error-fg1-default: #d61e20;
