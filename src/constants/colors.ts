@@ -18,7 +18,10 @@ export const COLOR = {
   primaryBg2Hover: "var(--primary-bg2-hover)",
   primaryBg2Press: "var(--primary-bg2-press)",
   primaryBg2Disable: "var(--primary-bg2-disable)",
+  successFg1Default: "var(--success-fg1-default)",
+  successBg1Default: "var(--success-bg1-default)",
   errorFg1Default: "var(--error-fg1-default)",
+  errorBg1Default: "var(--error-bg1-default)",
   ptNeutralT1St2Disable: "var(--pt-neutral-t1-st2-disable)",
 } as const;
 

@@ -18,7 +18,10 @@
   --primary-bg2-hover: #007070;
   --primary-bg2-press: #004a4a;
   --primary-bg2-disable: #99e3e3;
+  --success-fg1-default: #17B24A;
+  --success-bg1-default: #E3F6E9;
   --error-fg1-default: #d61e20;
+  --error-bg1-default: #FAE4E4;
   --pt-neutral-t1-st2-disable: #cccccc;
 
   /* Spacing (from constants/spacing.ts) */
@@ -55,4 +58,7 @@
   --type-message-line-height: 16px;
   --type-message-font-weight: 600;
   --type-message-letter-spacing: -0.02em;
+
+  /* Toast */
+  --toast-shadow: 0px 8px 40px 0px #2533433D;
 }

@@ -1,0 +1,43 @@
+.root {
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  opacity: 1;
+
+  border: 0;
+  outline: none;
+  background: transparent;
+
+  min-height: 0;
+  box-shadow: var(--toast-shadow);
+  border-radius: 0;
+
+  cursor: default;
+  user-select: none;
+  touch-action: manipulation;
+}
+
+.root[data-action="true"] {
+  cursor: pointer;
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+}
+
+.title,
+.description {
+  font-family: var(--font-inter), Inter, sans-serif;
+}
+
+.root[data-type="Success"] .title,
+.root[data-type="Success"] .description {
+  color: var(--success-fg1-default);
+}
+
+.root[data-type="Error"] .title,
+.root[data-type="Error"] .description {
+  color: var(--error-fg1-default);
+}
+
