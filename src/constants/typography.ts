@@ -12,6 +12,7 @@ export const FONT_WEIGHT = {
 export const FONT_SIZE = {
   12: 12,
   14: 14,
+  16: 16,
   18: 18,
 } as const;
 
@@ -50,6 +51,12 @@ export const TYPE = {
     fontSize: FONT_SIZE[14],
     lineHeight: LINE_HEIGHT[20],
     fontWeight: FONT_WEIGHT.regular,
+    letterSpacing: LETTER_SPACING.tight2,
+  },
+  sidebarItem: {
+    fontSize: FONT_SIZE[16],
+    lineHeight: LINE_HEIGHT[24],
+    fontWeight: FONT_WEIGHT.semibold,
     letterSpacing: LETTER_SPACING.tight2,
   },
 } as const;

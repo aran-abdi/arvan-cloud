@@ -15,6 +15,9 @@
   --neutral-st2-disable: #cccccc;
   --neutral-st3-default: #E6E6E6;
   --primary-fg1-default: #009595;
+  --primary-fg1-hover: #007070;
+  --primary-bg1-default: #E0F7F7;
+  --primary-bg1-hover: #D6F4F4;
   --primary-bg2-default: #009595;
   --primary-bg2-hover: #007070;
   --primary-bg2-press: #004a4a;
@@ -35,6 +38,8 @@
   --error-fg1-default: #d61e20;
   --error-bg1-default: #FAE4E4;
   --pt-neutral-t1-st2-disable: #cccccc;
+  --pt-neutral-t1-bg1-default: #FFFFFF;
+  --pt-neutral-t1-st5-default: #E6E6E6;
 
   /* Spacing (from constants/spacing.ts) */
   --space-field-label-gap: 8px;
@@ -104,4 +109,12 @@
   --section-body-height: 256px;
   --section-padding: 24px;
   --section-title-description-gap: 8px;
+
+  /* Sidebar */
+  --sidebar-width: 240px;
+  --sidebar-padding: 16px;
+  --sidebar-item-width: 216px;
+  --sidebar-item-min-height: 40px;
+  --sidebar-item-padding: 8px;
+  --sidebar-border-width: 1px;
 }

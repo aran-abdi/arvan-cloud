@@ -14,6 +14,9 @@ export const COLOR = {
   neutralSt2Hover: "var(--neutral-st2-hover)",
   neutralSt2Disable: "var(--neutral-st2-disable)",
   primaryFg1Default: "var(--primary-fg1-default)",
+  primaryFg1Hover: "var(--primary-fg1-hover)",
+  primaryBg1Default: "var(--primary-bg1-default)",
+  primaryBg1Hover: "var(--primary-bg1-hover)",
   primaryBg2Default: "var(--primary-bg2-default)",
   primaryBg2Hover: "var(--primary-bg2-hover)",
   primaryBg2Press: "var(--primary-bg2-press)",
@@ -34,6 +37,8 @@ export const COLOR = {
   errorFg1Default: "var(--error-fg1-default)",
   errorBg1Default: "var(--error-bg1-default)",
   ptNeutralT1St2Disable: "var(--pt-neutral-t1-st2-disable)",
+  ptNeutralT1Bg1Default: "var(--pt-neutral-t1-bg1-default)",
+  ptNeutralT1St5Default: "var(--pt-neutral-t1-st5-default)",
 } as const;
 
 export type ColorToken = (typeof COLOR)[keyof typeof COLOR];
