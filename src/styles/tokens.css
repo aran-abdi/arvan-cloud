@@ -97,4 +97,11 @@
   --button-padding-y: 10px;
   --button-padding-x: 16px;
   --button-border-width: 1px;
+
+  /* Section */
+  --section-width: 810px;
+  --section-header-min-height: 92px;
+  --section-body-height: 256px;
+  --section-padding: 24px;
+  --section-title-description-gap: 8px;
 }

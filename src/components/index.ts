@@ -10,3 +10,11 @@ export { ModalHeader, type ModalHeaderProps } from "./modal";
 export { ModalBody, type ModalBodyProps } from "./modal";
 export { ModalFooter, type ModalFooterProps } from "./modal";
 export { ModalStatusIcon, type ModalStatusIconProps, type ModalStatusVariant } from "./modal";
+export {
+  HeaderContent,
+  type HeaderContentProps,
+  SectionHeader,
+  type SectionHeaderProps,
+  SectionBody,
+  type SectionBodyProps,
+} from "./section";

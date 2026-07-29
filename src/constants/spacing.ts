@@ -4,6 +4,7 @@ export const SPACE = {
   10: 10,
   12: 12,
   16: 16,
+  24: 24,
 } as const;
 
 export const SPACE_PX = {
@@ -11,6 +12,7 @@ export const SPACE_PX = {
   10: `${SPACE[10]}px`,
   12: `${SPACE[12]}px`,
   16: `${SPACE[16]}px`,
+  24: `${SPACE[24]}px`,
 } as const;
 
 /** Semantic spacing for form fields. */
