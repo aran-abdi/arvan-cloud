@@ -5,12 +5,21 @@
   --neutral-fg1-disable: #cccccc;
   --neutral-fg2-default: #7f7f7f;
   --neutral-bg1-default: #ffffff;
+  --neutral-bg1-hover: #f0f0f0;
+  --neutral-bg1-press: #ebebeb;
   --neutral-st1-default: #7f7f7f;
+  --neutral-st1-hover: #666666;
+  --neutral-st1-press: #4c4c4c;
   --neutral-st2-default: #cccccc;
   --neutral-st2-hover: #b3b3b3;
   --neutral-st2-disable: #cccccc;
   --primary-fg1-default: #009595;
+  --primary-bg2-default: #009595;
+  --primary-bg2-hover: #007070;
+  --primary-bg2-press: #004a4a;
+  --primary-bg2-disable: #99e3e3;
   --error-fg1-default: #d61e20;
+  --pt-neutral-t1-st2-disable: #cccccc;
 
   /* Spacing (from constants/spacing.ts) */
   --space-field-label-gap: 8px;
@@ -25,6 +34,13 @@
   --input-height-md: 40px;
   --input-height-lg: 48px;
   --input-border-width: 1px;
+
+  /* Checkbox (16x16) */
+  --checkbox-size: 16px;
+  --checkbox-radius: 4px;
+  --checkbox-padding-on: 2px;
+  --checkbox-padding-off: 10px;
+  --checkbox-border-width: 2px;
 
   /* Typography (from constants/typography.ts) */
   --type-label-font-size: 14px;
