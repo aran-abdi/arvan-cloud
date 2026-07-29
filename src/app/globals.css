@@ -4,16 +4,22 @@
 :root {
   --background: #ffffff;
   --foreground: #333333;
+  /* LTR default: Inter. RTL: Yekan Bakh for Persian. */
+  --font-ui: var(--font-inter), Inter, sans-serif;
+}
+
+[dir="rtl"] {
+  --font-ui: var(--font-yekan-bakh), "Yekan Bakh FaNum", sans-serif;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-inter);
+  --font-sans: var(--font-ui);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-inter), Inter, sans-serif;
+  font-family: var(--font-ui);
 }

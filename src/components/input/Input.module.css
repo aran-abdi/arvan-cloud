@@ -5,9 +5,9 @@
 }
 
 .label {
-  font-family: var(--font-inter), Inter, sans-serif;
+  font-family: var(--font-ui);
   color: var(--neutral-fg1-default);
-  text-align: right;
+  text-align: start;
   vertical-align: middle;
 }
 
@@ -28,7 +28,7 @@
   border-style: solid;
   border-color: var(--neutral-st2-default);
   background: var(--neutral-bg1-default);
-  font-family: var(--font-inter), Inter, sans-serif;
+  font-family: var(--font-ui);
   color: var(--neutral-fg1-default);
   outline: none;
   opacity: 1;
@@ -92,10 +92,10 @@
 }
 
 .message {
-  font-family: var(--font-inter), Inter, sans-serif;
+  font-family: var(--font-ui);
   vertical-align: middle;
   color: var(--neutral-fg2-default);
-  text-align: right;
+  text-align: start;
   margin: 0;
 }
 

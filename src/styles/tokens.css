@@ -117,4 +117,10 @@
   --sidebar-item-min-height: 40px;
   --sidebar-item-padding: 8px;
   --sidebar-border-width: 1px;
+
+  /* Header panel */
+  --header-height: 64px;
+  --header-padding-y: 12px;
+  --header-padding-x: 24px;
+  --header-border-width: 1px;
 }

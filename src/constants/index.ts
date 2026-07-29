@@ -10,3 +10,4 @@ export * from "./menu";
 export * from "./pagination";
 export * from "./section";
 export * from "./sidebar";
+export * from "./header";

@@ -1,0 +1,11 @@
+.root {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  width: 100%;
+  height: var(--header-height);
+  padding: var(--header-padding-y) var(--header-padding-x);
+  background: var(--neutral-bg1-default);
+  border-bottom: var(--header-border-width) solid var(--neutral-st3-default);
+}

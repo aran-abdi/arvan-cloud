@@ -25,6 +25,10 @@
   pointer-events: none;
 }
 
+:global([dir="rtl"]) .chevron {
+  transform: scaleX(-1);
+}
+
 /* ─── Page item button ───────────────────────── */
 .item {
   display: inline-flex;
@@ -38,7 +42,7 @@
   border: 0;
   outline: none;
   cursor: pointer;
-  font-family: var(--font-inter), Inter, sans-serif;
+  font-family: var(--font-ui);
   background: var(--neutral-bg1-default);
   color: var(--neutral-fg1-default);
   transition:
@@ -85,7 +89,7 @@
   height: var(--pagination-item-size);
   box-sizing: border-box;
   padding: 0 var(--pagination-item-padding-x);
-  font-family: var(--font-inter), Inter, sans-serif;
+  font-family: var(--font-ui);
   background: transparent;
   color: var(--neutral-fg1-default);
   user-select: none;

@@ -10,7 +10,7 @@
   border-width: 0;
   background: transparent;
   text-decoration: none;
-  font-family: var(--font-inter), Inter, sans-serif;
+  font-family: var(--font-ui);
   transition:
     background 120ms ease,
     border-color 120ms ease,

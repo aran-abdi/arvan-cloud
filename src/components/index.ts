@@ -19,3 +19,4 @@ export {
   type SectionBodyProps,
 } from "./section";
 export { Sidebar, type SidebarProps, SidebarItem, type SidebarItemProps } from "./sidebar";
+export { Header, type HeaderProps } from "./header";

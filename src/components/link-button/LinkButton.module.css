@@ -9,7 +9,7 @@
   outline: none;
   cursor: pointer;
   text-decoration: none;
-  font-family: var(--font-inter), Inter, sans-serif;
+  font-family: var(--font-ui);
   color: var(--pt-info-t2-fg1-default);
   transition: color 120ms ease;
 }
