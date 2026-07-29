@@ -1,0 +1,66 @@
+.backdrop {
+  position: fixed;
+  inset: 0;
+  background: #00000052;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 50;
+}
+
+.panel {
+  background: var(--neutral-bg1-default);
+  border-radius: 8px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.header {
+  height: 72px;
+  box-sizing: border-box;
+  border-bottom: 1px solid var(--neutral-st3-default, #E6E6E6);
+  padding: 16px 24px;
+}
+
+.body {
+  box-sizing: border-box;
+  max-height: 456px;
+  padding: 24px;
+  opacity: 1;
+  overflow: auto;
+}
+
+.footer {
+  height: 72px;
+  box-sizing: border-box;
+  border-top: 1px solid var(--neutral-st3-default, #E6E6E6);
+  padding: 16px 24px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 12px;
+}
+
+.statusIconWrapper {
+  width: 56px;
+  height: 56px;
+  padding: 16px;
+  border-radius: 96px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.statusIconWrapper[data-variant="success"] {
+  background: var(--success-bg1-default);
+}
+
+.statusIconWrapper[data-variant="failed"] {
+  background: var(--error-bg1-default);
+}
+
+.statusIcon {
+  display: block;
+}
+

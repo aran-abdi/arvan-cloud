@@ -5,3 +5,8 @@ export { Button, type ButtonProps } from "./button";
 export { LinkButton, type LinkButtonProps } from "./link-button";
 export { DropDownElement, type DropDownElementProps, DropDownContent, type DropDownContentProps, DropDownMenu, type DropDownMenuProps } from "./menu";
 export { Pagination, type PaginationProps } from "./pagination";
+export { Modal, type ModalProps } from "./modal";
+export { ModalHeader, type ModalHeaderProps } from "./modal";
+export { ModalBody, type ModalBodyProps } from "./modal";
+export { ModalFooter, type ModalFooterProps } from "./modal";
+export { ModalStatusIcon, type ModalStatusIconProps, type ModalStatusVariant } from "./modal";
