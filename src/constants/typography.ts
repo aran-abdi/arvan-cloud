@@ -1,0 +1,55 @@
+/** Letter-spacing -2% → -0.02em */
+export const LETTER_SPACING = {
+  tight2: "-0.02em",
+} as const;
+
+export const FONT_WEIGHT = {
+  regular: 400,
+  semibold: 600,
+} as const;
+
+export const FONT_SIZE = {
+  12: 12,
+  14: 14,
+} as const;
+
+export const LINE_HEIGHT = {
+  16: 16,
+  20: 20,
+} as const;
+
+export const TYPE = {
+  label: {
+    fontSize: FONT_SIZE[14],
+    lineHeight: LINE_HEIGHT[20],
+    fontWeight: FONT_WEIGHT.regular,
+    letterSpacing: LETTER_SPACING.tight2,
+  },
+  input: {
+    fontSize: FONT_SIZE[14],
+    lineHeight: LINE_HEIGHT[20],
+    fontWeight: FONT_WEIGHT.regular,
+    letterSpacing: LETTER_SPACING.tight2,
+  },
+  message: {
+    fontSize: FONT_SIZE[12],
+    lineHeight: LINE_HEIGHT[16],
+    fontWeight: FONT_WEIGHT.semibold,
+    letterSpacing: LETTER_SPACING.tight2,
+  },
+} as const;
+
+export const TYPE_VAR = {
+  labelFontSize: "var(--type-label-font-size)",
+  labelLineHeight: "var(--type-label-line-height)",
+  labelFontWeight: "var(--type-label-font-weight)",
+  labelLetterSpacing: "var(--type-label-letter-spacing)",
+  inputFontSize: "var(--type-input-font-size)",
+  inputLineHeight: "var(--type-input-line-height)",
+  inputFontWeight: "var(--type-input-font-weight)",
+  inputLetterSpacing: "var(--type-input-letter-spacing)",
+  messageFontSize: "var(--type-message-font-size)",
+  messageLineHeight: "var(--type-message-line-height)",
+  messageFontWeight: "var(--type-message-font-weight)",
+  messageLetterSpacing: "var(--type-message-letter-spacing)",
+} as const;

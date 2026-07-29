@@ -1,0 +1,104 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.label {
+  font-family: var(--font-inter), Inter, sans-serif;
+  color: var(--neutral-fg1-default);
+  text-align: right;
+  vertical-align: middle;
+}
+
+.required {
+  margin-inline-start: 0.25em;
+}
+
+.control {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.input {
+  box-sizing: border-box;
+  width: 100%;
+  margin: 0;
+  border-style: solid;
+  border-color: var(--neutral-st2-default);
+  background: var(--neutral-bg1-default);
+  font-family: var(--font-inter), Inter, sans-serif;
+  color: var(--neutral-fg1-default);
+  outline: none;
+  opacity: 1;
+  transition:
+    border-color 120ms ease,
+    color 120ms ease;
+}
+
+.input::placeholder {
+  color: var(--neutral-fg1-disable);
+  opacity: 1;
+}
+
+/* state=hover */
+.input:hover:not(:disabled):not(:read-only):not(:focus) {
+  border-color: var(--neutral-st2-hover);
+  color: var(--neutral-fg1-hover);
+}
+
+.input:hover:not(:disabled):not(:read-only):not(:focus)::placeholder {
+  color: var(--neutral-fg1-hover);
+}
+
+/* state=active (focus) */
+.input:focus:not(:disabled):not(:read-only) {
+  border-color: var(--primary-fg1-default);
+  color: var(--neutral-fg1-default);
+}
+
+.input:focus:not(:disabled):not(:read-only)::placeholder {
+  color: var(--neutral-fg1-default);
+}
+
+/* state=read-only */
+.input:read-only:not(:disabled) {
+  border-color: var(--neutral-st1-default);
+  color: var(--neutral-fg1-default);
+  cursor: default;
+}
+
+/* state=disable */
+.input:disabled {
+  border-color: var(--neutral-st2-disable);
+  color: var(--neutral-fg1-disable);
+  cursor: not-allowed;
+}
+
+.input:disabled::placeholder {
+  color: var(--neutral-fg1-disable);
+}
+
+/* error */
+.error {
+  border-color: var(--error-fg1-default);
+}
+
+.error:hover:not(:disabled):not(:read-only):not(:focus),
+.error:focus:not(:disabled):not(:read-only),
+.error:read-only:not(:disabled) {
+  border-color: var(--error-fg1-default);
+}
+
+.message {
+  font-family: var(--font-inter), Inter, sans-serif;
+  vertical-align: middle;
+  color: var(--neutral-fg2-default);
+  text-align: right;
+  margin: 0;
+}
+
+.messageError {
+  color: var(--error-fg1-default);
+}

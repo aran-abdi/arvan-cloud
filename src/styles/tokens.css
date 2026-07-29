@@ -1,0 +1,42 @@
+:root {
+  /* Colors */
+  --neutral-fg1-default: #333333;
+  --neutral-fg1-hover: #191919;
+  --neutral-fg1-disable: #cccccc;
+  --neutral-fg2-default: #7f7f7f;
+  --neutral-bg1-default: #ffffff;
+  --neutral-st1-default: #7f7f7f;
+  --neutral-st2-default: #cccccc;
+  --neutral-st2-hover: #b3b3b3;
+  --neutral-st2-disable: #cccccc;
+  --primary-fg1-default: #009595;
+  --error-fg1-default: #d61e20;
+
+  /* Spacing (from constants/spacing.ts) */
+  --space-field-label-gap: 8px;
+  --space-field-message-gap: 8px;
+  --space-input-padding-x: 12px;
+
+  /* Radius (from constants/radius.ts) */
+  --radius-input: 8px;
+
+  /* Input sizes (from constants/input.ts) */
+  --input-height-sm: 36px;
+  --input-height-md: 40px;
+  --input-height-lg: 48px;
+  --input-border-width: 1px;
+
+  /* Typography (from constants/typography.ts) */
+  --type-label-font-size: 14px;
+  --type-label-line-height: 20px;
+  --type-label-font-weight: 400;
+  --type-label-letter-spacing: -0.02em;
+  --type-input-font-size: 14px;
+  --type-input-line-height: 20px;
+  --type-input-font-weight: 400;
+  --type-input-letter-spacing: -0.02em;
+  --type-message-font-size: 12px;
+  --type-message-line-height: 16px;
+  --type-message-font-weight: 600;
+  --type-message-letter-spacing: -0.02em;
+}
