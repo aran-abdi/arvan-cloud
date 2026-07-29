@@ -5,3 +5,4 @@ export * from "./typography";
 export * from "./input";
 export * from "./checkbox";
 export * from "./toast";
+export * from "./button";

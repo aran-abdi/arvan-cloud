@@ -18,6 +18,13 @@
   --primary-bg2-hover: #007070;
   --primary-bg2-press: #004a4a;
   --primary-bg2-disable: #99e3e3;
+  --neutral-fg3-default: #ffffff;
+  --neutral-fg1-press: #000000;
+  --neutral-st2-press: #999999;
+  --error-bg2-default: #d61e20;
+  --error-bg2-hover: #ab181a;
+  --error-bg2-press: #801213;
+  --error-bg2-disable: #efa5a6;
   --success-fg1-default: #17B24A;
   --success-bg1-default: #E3F6E9;
   --error-fg1-default: #d61e20;
@@ -61,4 +68,11 @@
 
   /* Toast */
   --toast-shadow: 0px 8px 40px 0px #2533433D;
+
+  /* Button */
+  --radius-button: 12px;
+  --button-height: 40px;
+  --button-padding-y: 10px;
+  --button-padding-x: 16px;
+  --button-border-width: 1px;
 }

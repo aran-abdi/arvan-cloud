@@ -1,12 +1,16 @@
 /** Spacing scale in px — single source for gaps and padding. */
 export const SPACE = {
   8: 8,
+  10: 10,
   12: 12,
+  16: 16,
 } as const;
 
 export const SPACE_PX = {
   8: `${SPACE[8]}px`,
+  10: `${SPACE[10]}px`,
   12: `${SPACE[12]}px`,
+  16: `${SPACE[16]}px`,
 } as const;
 
 /** Semantic spacing for form fields. */
