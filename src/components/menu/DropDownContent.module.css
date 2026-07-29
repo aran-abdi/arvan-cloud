@@ -1,0 +1,15 @@
+.root {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  box-sizing: border-box;
+  gap: var(--menu-item-gap);
+  background: var(--neutral-bg1-default);
+  padding: var(--menu-item-padding);
+  font-family: var(--font-inter), Inter, sans-serif;
+  color: var(--neutral-fg2-default);
+}
+
+.label {
+  text-align: right;
+}

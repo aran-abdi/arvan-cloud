@@ -1,0 +1,11 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  width: var(--menu-panel-width);
+  border-radius: var(--menu-panel-radius);
+  padding: var(--menu-panel-padding);
+  gap: var(--menu-panel-gap);
+  background: var(--neutral-bg1-default);
+  box-shadow: var(--menu-panel-shadow);
+}

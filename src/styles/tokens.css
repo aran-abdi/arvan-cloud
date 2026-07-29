@@ -73,6 +73,18 @@
   /* Toast */
   --toast-shadow: 0px 8px 40px 0px #2533433D;
 
+  /* Menu */
+  --menu-element-width: 243px;
+  --menu-item-height: 36px;
+  --menu-item-border-radius: 8px;
+  --menu-item-padding: 8px;
+  --menu-item-gap: 8px;
+  --menu-panel-width: 287px;
+  --menu-panel-radius: 12px;
+  --menu-panel-padding: 8px;
+  --menu-panel-gap: 4px;
+  --menu-panel-shadow: 0px 4px 16px 0px #00000029;
+
   /* Button */
   --radius-button: 12px;
   --button-height: 40px;
