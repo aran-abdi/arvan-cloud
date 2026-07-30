@@ -33,10 +33,18 @@ export type CreateArticleFormProps = {
   initialValues?: CreateArticleFormValues;
 };
 
+function compareTagNames(a: string, b: string): number {
+  return a.localeCompare(b, undefined, { sensitivity: "base" });
+}
+
+/** Selected tags first (A–Z), then unselected tags (A–Z). */
 function sortTags(tags: ArticleTagOption[]): ArticleTagOption[] {
-  return [...tags].sort((a, b) =>
-    a.name.localeCompare(b.name, undefined, { sensitivity: "base" })
-  );
+  return [...tags].sort((a, b) => {
+    if (a.checked !== b.checked) {
+      return a.checked ? -1 : 1;
+    }
+    return compareTagNames(a.name, b.name);
+  });
 }
 
 function buildInitialTags(
@@ -248,10 +256,12 @@ export function CreateArticleForm({
                   disabled={submitting}
                   onValueChange={(next) => {
                     setTags((current) =>
-                      current.map((item) =>
-                        item.name === tag.name
-                          ? { ...item, checked: next === "On" }
-                          : item
+                      sortTags(
+                        current.map((item) =>
+                          item.name === tag.name
+                            ? { ...item, checked: next === "On" }
+                            : item
+                        )
                       )
                     );
                   }}
