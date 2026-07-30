@@ -37,6 +37,22 @@ type MenuCoords = {
   left: number;
 };
 
+function isTriggerVisible(trigger: HTMLElement): boolean {
+  if (typeof trigger.checkVisibility === "function") {
+    return trigger.checkVisibility({
+      checkOpacity: false,
+      checkVisibilityCSS: true,
+    });
+  }
+
+  let node: HTMLElement | null = trigger;
+  while (node) {
+    if (getComputedStyle(node).display === "none") return false;
+    node = node.parentElement;
+  }
+  return true;
+}
+
 export function TableActions({
   children,
   className,
@@ -74,6 +90,13 @@ export function TableActions({
   const updatePosition = useCallback(() => {
     const trigger = triggerRef.current;
     if (!trigger) return;
+
+    // Hidden triggers (e.g. display:none responsive twin) must not portal a
+    // menu or attach outside-click listeners that steal the visible twin's clicks.
+    if (!isTriggerVisible(trigger)) {
+      setCoords(null);
+      return;
+    }
 
     const rect = trigger.getBoundingClientRect();
     const menuWidth = TABLE.actionsMenuWidth;
@@ -120,8 +143,10 @@ export function TableActions({
     updatePosition();
   }, [open, updatePosition]);
 
+  const menuActive = open && coords !== null;
+
   useEffect(() => {
-    if (!open) return;
+    if (!menuActive) return;
 
     const onPointerDown = (e: PointerEvent) => {
       const target = e.target as Node;
@@ -144,7 +169,7 @@ export function TableActions({
       window.removeEventListener("resize", onReposition);
       window.removeEventListener("scroll", onReposition, true);
     };
-  }, [open, close, updatePosition]);
+  }, [menuActive, close, updatePosition]);
 
   const menuItems = Children.map(children, (child) => {
     if (!isValidElement(child)) return child;

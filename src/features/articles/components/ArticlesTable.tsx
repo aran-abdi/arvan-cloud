@@ -84,7 +84,9 @@ export function ArticlesTable({
 }: ArticlesTableProps) {
   const router = useRouter();
   const { showToast } = useToast();
-  const [openRow, setOpenRow] = useState<number | null>(null);
+  // Table and card views both mount row actions; keep open keys distinct so a
+  // display:none instance cannot portal a ghost menu or steal outside clicks.
+  const [openMenuKey, setOpenMenuKey] = useState<string | null>(null);
   const [deleteTargetId, setDeleteTargetId] = useState<number | null>(null);
   const [pending, startTransition] = useTransition();
 
@@ -93,7 +95,7 @@ export function ArticlesTable({
   };
 
   const openDeleteModal = (id: number) => {
-    setOpenRow(null);
+    setOpenMenuKey(null);
     setDeleteTargetId(id);
   };
 
@@ -103,7 +105,7 @@ export function ArticlesTable({
   };
 
   const handleEdit = (id: number) => {
-    setOpenRow(null);
+    setOpenMenuKey(null);
     router.push(getArticleEditPath(id));
   };
 
@@ -236,9 +238,9 @@ export function ArticlesTable({
                               rowId={row.id}
                               messages={messages}
                               pending={pending}
-                              open={openRow === row.id}
+                              open={openMenuKey === `table-${row.id}`}
                               onOpenChange={(next) =>
-                                setOpenRow(next ? row.id : null)
+                                setOpenMenuKey(next ? `table-${row.id}` : null)
                               }
                               onEdit={handleEdit}
                               onDelete={openDeleteModal}
@@ -265,9 +267,9 @@ export function ArticlesTable({
                             rowId={row.id}
                             messages={messages}
                             pending={pending}
-                            open={openRow === row.id}
+                            open={openMenuKey === `card-${row.id}`}
                             onOpenChange={(next) =>
-                              setOpenRow(next ? row.id : null)
+                              setOpenMenuKey(next ? `card-${row.id}` : null)
                             }
                             onEdit={handleEdit}
                             onDelete={openDeleteModal}

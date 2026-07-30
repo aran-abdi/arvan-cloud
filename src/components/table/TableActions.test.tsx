@@ -82,4 +82,16 @@ describe("TableActions", () => {
 
     expect(await screen.findByRole("menu")).toBeInTheDocument();
   });
+
+  it("does not portal a menu when the trigger is display:none", async () => {
+    render(
+      <div style={{ display: "none" }}>
+        <TableActions defaultOpen>
+          <DropDownElement>Edit</DropDownElement>
+        </TableActions>
+      </div>
+    );
+
+    expect(screen.queryByRole("menu")).not.toBeInTheDocument();
+  });
 });
