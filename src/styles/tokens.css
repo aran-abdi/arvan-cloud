@@ -233,6 +233,7 @@
   --modal-icon-wrapper-radius: 96px;
   --modal-icon-size: 24px;
   --modal-viewport-gutter: var(--space-32);
+  --modal-viewport-gutter-compact: var(--space-16);
 
   /* Table */
   --table-row-height: 48px;

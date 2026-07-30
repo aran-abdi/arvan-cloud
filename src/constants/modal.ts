@@ -47,4 +47,5 @@ export const MODAL_VAR = {
   iconWrapperRadius: "var(--modal-icon-wrapper-radius)",
   iconSize: "var(--modal-icon-size)",
   viewportGutter: "var(--modal-viewport-gutter)",
+  viewportGutterCompact: "var(--modal-viewport-gutter-compact)",
 } as const;

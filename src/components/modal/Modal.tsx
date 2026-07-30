@@ -37,7 +37,12 @@ export function Modal({
   const panel = (
     <div
       className={cn(styles.panel, inline && className)}
-      style={{ width: size, ...style }}
+      style={
+        {
+          "--modal-panel-width": `${size}px`,
+          ...style,
+        } as CSSProperties
+      }
       onMouseDown={inline ? undefined : (e) => e.stopPropagation()}
     >
       {children}

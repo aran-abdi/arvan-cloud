@@ -316,6 +316,7 @@ export const TOKEN_NAV: readonly TokenCategory[] = [
       { name: "--modal-icon-wrapper-radius", value: "96px", description: "Status icon circle radius.", kind: "size" },
       { name: "--modal-icon-size", value: "24px", description: "Glyph size inside the circle.", kind: "size" },
       { name: "--modal-viewport-gutter", value: "var(--space-32)", description: "Horizontal gutter subtracted from viewport width.", kind: "size" },
+      { name: "--modal-viewport-gutter-compact", value: "var(--space-16)", description: "Backdrop inset for mobile and tablet bottom placement.", kind: "size" },
     ],
   },
   {

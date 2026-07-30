@@ -9,6 +9,7 @@
 }
 
 .panel {
+  width: var(--modal-panel-width);
   background: var(--neutral-bg1-default);
   border-radius: var(--modal-radius);
   box-sizing: border-box;
@@ -42,10 +43,32 @@
   gap: var(--modal-footer-gap);
 }
 
-/* Text buttons default to width:100%; keep footer actions intrinsic. */
+/* Text buttons default to width:100%; keep footer actions intrinsic on desktop. */
 .footer > * {
   width: auto;
   flex: 0 0 auto;
+}
+
+@media (max-width: 1023px) {
+  .backdrop {
+    align-items: flex-end;
+    padding: var(--modal-viewport-gutter-compact);
+    padding-bottom: max(
+      var(--modal-viewport-gutter-compact),
+      env(safe-area-inset-bottom)
+    );
+  }
+
+  .panel {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .footer > * {
+    width: 100%;
+    flex: 1 1 0;
+    min-width: 0;
+  }
 }
 
 .statusIconWrapper {
