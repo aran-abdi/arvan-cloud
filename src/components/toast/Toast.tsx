@@ -92,7 +92,7 @@ export function Toast({
 
   const textStyle: CSSProperties = useMemo(
     () => ({
-      rowGap: TOAST.titleToDescriptionGap,
+      gap: TOAST.titleToDescriptionGap,
     }),
     []
   );

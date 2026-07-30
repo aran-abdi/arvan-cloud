@@ -5,6 +5,7 @@ import {
   ChevronLeftDisabledIcon,
   ChevronRightDefaultIcon,
   ChevronRightDisabledIcon,
+  DotsIcon,
 } from "@/components/icons";
 import {
   FONT_SIZE,
@@ -105,10 +106,9 @@ export function Pagination({
               key={token}
               className={styles.ellipsis}
               data-disabled={disabled ? "true" : undefined}
-              style={typographyStyle}
               aria-hidden="true"
             >
-              …
+              <DotsIcon />
             </span>
           );
         }

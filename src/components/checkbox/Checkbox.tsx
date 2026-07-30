@@ -1,25 +1,29 @@
 "use client";
 
-import type { ButtonHTMLAttributes } from "react";
-import { useCallback, useMemo, useState } from "react";
+import type { ButtonHTMLAttributes, ReactNode } from "react";
+import { useCallback, useId, useMemo, useState } from "react";
 import { CheckIcon, IndeterminateIcon } from "@/components/icons";
 import type { CheckboxValue } from "@/constants";
 import { cn } from "@/lib/cn";
 import styles from "./Checkbox.module.css";
 
-type CheckboxProps = Omit<
+export type CheckboxProps = Omit<
   ButtonHTMLAttributes<HTMLButtonElement>,
-  "value" | "disabled" | "onChange"
+  "value" | "disabled" | "onChange" | "children"
 > & {
   value: CheckboxValue;
   disabled?: boolean;
   onValueChange?: (next: CheckboxValue) => void;
+  /** Optional text shown next to the control (4px gap, vertically centered). */
+  label?: ReactNode;
 };
 
 export function Checkbox({
   value,
   disabled = false,
   onValueChange,
+  label,
+  id,
   className,
   onPointerDown,
   onPointerUp,
@@ -30,6 +34,8 @@ export function Checkbox({
   ...buttonProps
 }: CheckboxProps) {
   const [pressed, setPressed] = useState(false);
+  const generatedId = useId();
+  const checkboxId = id ?? generatedId;
 
   const dataValue = useMemo(() => {
     switch (value) {
@@ -124,9 +130,10 @@ export function Checkbox({
       [onBlur]
     );
 
-  return (
+  const control = (
     <button
       type="button"
+      id={checkboxId}
       role="checkbox"
       aria-checked={
         value === "On" ? true : value === "Indeterminate" ? "mixed" : false
@@ -135,7 +142,7 @@ export function Checkbox({
       disabled={disabled}
       data-value={dataValue}
       data-pressed={pressed || undefined}
-      className={cn(styles.root, className)}
+      className={cn(styles.root, !label && className)}
       onClick={handleClick}
       onPointerDown={handlePointerDown}
       onPointerUp={handlePointerUp}
@@ -151,5 +158,18 @@ export function Checkbox({
       ) : null}
     </button>
   );
-}
 
+  if (label === undefined || label === null || label === false || label === "") {
+    return control;
+  }
+
+  return (
+    <label
+      className={cn(styles.field, className)}
+      data-disabled={disabled ? "true" : undefined}
+    >
+      {control}
+      <span className={styles.label}>{label}</span>
+    </label>
+  );
+}

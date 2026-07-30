@@ -8,19 +8,22 @@ import { MODAL } from "@/constants/modal";
 import styles from "./Modal.module.css";
 
 export type ModalProps = {
-  open: boolean;
+  open?: boolean;
   size: ModalSize;
   onClose?: () => void;
   children: ReactNode;
+  /** Renders the panel in-flow (no overlay) — for docs / static previews. */
+  inline?: boolean;
   className?: string;
   style?: CSSProperties;
 };
 
 export function Modal({
-  open,
+  open = true,
   size,
   onClose,
   children,
+  inline = false,
   className,
   style,
 }: ModalProps) {
@@ -33,6 +36,24 @@ export function Modal({
     [onClose]
   );
 
+  const panel = (
+    <div
+      className={cn(styles.panel, inline && className)}
+      style={{ width: size, ...style }}
+      onMouseDown={inline ? undefined : (e) => e.stopPropagation()}
+    >
+      {children}
+    </div>
+  );
+
+  if (inline) {
+    return (
+      <div role="dialog" aria-modal="false">
+        {panel}
+      </div>
+    );
+  }
+
   if (!open) return null;
 
   return (
@@ -43,14 +64,7 @@ export function Modal({
       onMouseDown={handleBackdropMouseDown}
       style={{ background: MODAL.overlayBg }}
     >
-      <div
-        className={styles.panel}
-        style={{ width: size, ...style }}
-        onMouseDown={(e) => e.stopPropagation()}
-      >
-        {children}
-      </div>
+      {panel}
     </div>
   );
 }
-

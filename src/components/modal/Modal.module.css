@@ -41,6 +41,12 @@
   gap: 12px;
 }
 
+/* Text buttons default to width:100%; keep footer actions intrinsic. */
+.footer > * {
+  width: auto;
+  flex: 0 0 auto;
+}
+
 .statusIconWrapper {
   width: 56px;
   height: 56px;
@@ -54,6 +60,7 @@
 
 .statusIconWrapper[data-variant="success"] {
   background: var(--success-bg1-default);
+  color: var(--success-fg1-default);
 }
 
 .statusIconWrapper[data-variant="failed"] {

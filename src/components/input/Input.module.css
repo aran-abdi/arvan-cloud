@@ -97,6 +97,11 @@
   color: var(--neutral-fg2-default);
   text-align: start;
   margin: 0;
+  min-height: var(--type-message-line-height);
+}
+
+.messageHidden {
+  visibility: hidden;
 }
 
 .messageError {

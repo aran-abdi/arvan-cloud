@@ -1,7 +1,15 @@
 .root {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 4px;
+  box-sizing: border-box;
+  width: var(--pagination-width);
+  background: var(--neutral-bg1-default);
+  border: var(--pagination-border-width) solid var(--neutral-st2-default);
+  border-radius: var(--pagination-radius);
+  padding: var(--pagination-padding);
+  font-family: var(--font-ui);
 }
 
 /* ─── Chevron button ──────────────────────────── */
@@ -42,7 +50,7 @@
   border: 0;
   outline: none;
   cursor: pointer;
-  font-family: var(--font-ui);
+  font-family: inherit;
   background: var(--neutral-bg1-default);
   color: var(--neutral-fg1-default);
   transition:
@@ -89,12 +97,18 @@
   height: var(--pagination-item-size);
   box-sizing: border-box;
   padding: 0 var(--pagination-item-padding-x);
-  font-family: var(--font-ui);
   background: transparent;
-  color: var(--neutral-fg1-default);
+  color: var(--pt-neutral-t1-fg2-default);
   user-select: none;
 }
 
 .ellipsis[data-disabled="true"] {
   color: var(--neutral-fg1-disable);
+}
+
+.ellipsis svg {
+  width: 14px;
+  height: 3.5px;
+  flex-shrink: 0;
+  display: block;
 }

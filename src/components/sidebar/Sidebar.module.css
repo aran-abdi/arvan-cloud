@@ -11,6 +11,15 @@
   gap: 0;
 }
 
+.root[data-fixed="true"] {
+  position: fixed;
+  top: var(--header-height);
+  inset-inline-start: 0;
+  z-index: 30;
+  height: calc(100vh - var(--header-height));
+  overflow-y: auto;
+}
+
 .item {
   display: flex;
   align-items: center;

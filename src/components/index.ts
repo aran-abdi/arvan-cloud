@@ -1,5 +1,5 @@
 export { Input, type InputProps, type InputSize } from "./input";
-export { Checkbox } from "./checkbox";
+export { Checkbox, type CheckboxProps } from "./checkbox";
 export { Toast, type ToastProps } from "./toast";
 export { Button, type ButtonProps } from "./button";
 export { LinkButton, type LinkButtonProps } from "./link-button";
@@ -13,6 +13,8 @@ export { ModalStatusIcon, type ModalStatusIconProps, type ModalStatusVariant } f
 export {
   HeaderContent,
   type HeaderContentProps,
+  Section,
+  type SectionProps,
   SectionHeader,
   type SectionHeaderProps,
   SectionBody,
@@ -20,3 +22,21 @@ export {
 } from "./section";
 export { Sidebar, type SidebarProps, SidebarItem, type SidebarItemProps } from "./sidebar";
 export { Header, type HeaderProps } from "./header";
+export {
+  Table,
+  type TableProps,
+  TableHeader,
+  type TableHeaderProps,
+  TableBody,
+  type TableBodyProps,
+  TableRow,
+  type TableRowProps,
+  TableHead,
+  type TableHeadProps,
+  TableCell,
+  type TableCellProps,
+  TableRowNumber,
+  type TableRowNumberProps,
+  TableActions,
+  type TableActionsProps,
+} from "./table/index";

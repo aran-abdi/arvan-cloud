@@ -4,6 +4,7 @@ export const SECTION = {
   bodyHeight: 256,
   padding: 24,
   titleDescriptionGap: 8,
+  borderRadius: 8,
 } as const;
 
 export const SECTION_VAR = {
@@ -12,4 +13,5 @@ export const SECTION_VAR = {
   bodyHeight: "var(--section-body-height)",
   padding: "var(--section-padding)",
   titleDescriptionGap: "var(--section-title-description-gap)",
+  borderRadius: "var(--section-radius)",
 } as const;

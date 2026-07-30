@@ -1,5 +1,6 @@
 /** Spacing scale in px — single source for gaps and padding. */
 export const SPACE = {
+  4: 4,
   8: 8,
   10: 10,
   12: 12,
@@ -8,6 +9,7 @@ export const SPACE = {
 } as const;
 
 export const SPACE_PX = {
+  4: `${SPACE[4]}px`,
   8: `${SPACE[8]}px`,
   10: `${SPACE[10]}px`,
   12: `${SPACE[12]}px`,

@@ -2,8 +2,10 @@ export const CHECKBOX = {
   size: 16,
   radius: 4,
   paddingOn: 2,
-  paddingOff: 10,
+  /** Off has no inner content; padding must stay 0 so the 16×16 box + 2px border fit. */
+  paddingOff: 0,
   borderWidth: 2,
+  labelGap: 4,
 } as const;
 
 export const CHECKBOX_ICON = {
@@ -25,5 +27,6 @@ export const CHECKBOX_VAR = {
   paddingOn: "var(--checkbox-padding-on)",
   paddingOff: "var(--checkbox-padding-off)",
   borderWidth: "var(--checkbox-border-width)",
+  labelGap: "var(--checkbox-label-gap)",
 } as const;
 

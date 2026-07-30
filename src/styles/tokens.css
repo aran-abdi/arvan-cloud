@@ -40,6 +40,7 @@
   --pt-neutral-t1-st2-disable: #cccccc;
   --pt-neutral-t1-bg1-default: #FFFFFF;
   --pt-neutral-t1-st5-default: #E6E6E6;
+  --pt-neutral-t1-fg2-default: #4C4C4C;
 
   /* Spacing (from constants/spacing.ts) */
   --space-field-label-gap: 8px;
@@ -59,8 +60,9 @@
   --checkbox-size: 16px;
   --checkbox-radius: 4px;
   --checkbox-padding-on: 2px;
-  --checkbox-padding-off: 10px;
+  --checkbox-padding-off: 0px;
   --checkbox-border-width: 2px;
+  --checkbox-label-gap: 4px;
 
   /* Typography (from constants/typography.ts) */
   --type-label-font-size: 14px;
@@ -80,6 +82,10 @@
   --toast-shadow: 0px 8px 40px 0px #2533433D;
 
   /* Pagination */
+  --pagination-width: 360px;
+  --pagination-radius: 8px;
+  --pagination-border-width: 1px;
+  --pagination-padding: 4px;
   --pagination-item-size: 32px;
   --pagination-item-radius: 8px;
   --pagination-item-padding-x: 8px;
@@ -109,6 +115,7 @@
   --section-body-height: 256px;
   --section-padding: 24px;
   --section-title-description-gap: 8px;
+  --section-radius: 8px;
 
   /* Sidebar */
   --sidebar-width: 240px;
@@ -123,4 +130,25 @@
   --header-padding-y: 12px;
   --header-padding-x: 24px;
   --header-border-width: 1px;
+
+  /* Table */
+  --table-row-height: 48px;
+  --table-header-bg: var(--neutral-bg1-hover);
+  --table-stroke: var(--neutral-st3-default);
+  --table-stroke-width: 1px;
+  --table-row-bg: var(--neutral-bg1-default);
+  --table-row-number-bg: var(--neutral-bg1-hover);
+  --table-row-number-radius: 4px;
+  --table-header-font-size: 18px;
+  --table-header-line-height: 24px;
+  --table-cell-font-size: 14px;
+  --table-cell-line-height: 20px;
+  --table-cell-padding-x: 16px;
+  --table-actions-trigger-size: 32px;
+  --table-actions-menu-width: 144px;
+  --table-actions-menu-height: 90px;
+  --table-actions-menu-padding: 8px;
+  --table-actions-menu-gap: 4px;
+  --table-actions-menu-radius: 12px;
+  --table-actions-menu-shadow: 0px 4px 16px rgba(0, 0, 0, 0.16);
 }

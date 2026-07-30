@@ -1,0 +1,170 @@
+.scroll {
+  box-sizing: border-box;
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: visible;
+  background: var(--table-row-bg);
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  table-layout: auto;
+  font-family: var(--font-ui);
+}
+
+.head {
+  background: var(--table-header-bg);
+  color: var(--neutral-fg1-default);
+  font-size: var(--table-header-font-size);
+  font-weight: 600;
+  line-height: var(--table-header-line-height);
+  letter-spacing: -0.02em;
+  text-align: start;
+  vertical-align: middle;
+  height: var(--table-row-height);
+  padding: 0 var(--table-cell-padding-x);
+  border-bottom: var(--table-stroke-width) solid var(--table-stroke);
+  white-space: nowrap;
+}
+
+.headCenter {
+  text-align: center;
+}
+
+/* Match row-number badge footprint so "#" lines up with digits */
+.headIndex {
+  width: 1%;
+  padding-inline: var(--table-cell-padding-x);
+  text-align: center;
+}
+
+.headIndexLabel {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  min-width: 28px;
+  height: 28px;
+}
+
+.row {
+  background: var(--table-row-bg);
+  height: var(--table-row-height);
+}
+
+.row:not(:last-child) .cell,
+.row:not(:last-child) .head {
+  border-bottom: var(--table-stroke-width) solid var(--table-stroke);
+}
+
+.body .row .cell {
+  border-bottom: var(--table-stroke-width) solid var(--table-stroke);
+}
+
+.body .row:last-child .cell {
+  border-bottom: var(--table-stroke-width) solid var(--table-stroke);
+}
+
+.cell {
+  color: var(--neutral-fg1-default);
+  font-size: var(--table-cell-font-size);
+  font-weight: 400;
+  line-height: var(--table-cell-line-height);
+  letter-spacing: -0.02em;
+  text-align: start;
+  vertical-align: middle;
+  height: var(--table-row-height);
+  padding: 0 var(--table-cell-padding-x);
+  background: var(--table-row-bg);
+}
+
+.cellStrong {
+  font-weight: 600;
+}
+
+.cellCenter {
+  text-align: center;
+}
+
+.cellIndex {
+  width: 1%;
+  text-align: center;
+}
+
+.rowNumber {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  min-width: 28px;
+  height: 28px;
+  padding: 0 8px;
+  border-radius: var(--table-row-number-radius);
+  background: var(--table-row-number-bg);
+  color: var(--neutral-fg1-default);
+  font-family: var(--font-ui);
+  font-size: var(--table-cell-font-size);
+  font-weight: 400;
+  line-height: var(--table-cell-line-height);
+  letter-spacing: -0.02em;
+}
+
+.actions {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.actionsTrigger {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  width: var(--table-actions-trigger-size);
+  height: var(--table-actions-trigger-size);
+  padding: 0;
+  border: 1px solid var(--neutral-st2-default);
+  border-radius: 12px;
+  background: transparent;
+  color: var(--neutral-fg1-default);
+  cursor: pointer;
+  outline: none;
+  transition:
+    background 120ms ease,
+    border-color 120ms ease;
+}
+
+.actionsTrigger:hover {
+  background: var(--neutral-bg1-hover);
+}
+
+.actionsTrigger:active,
+.actionsTrigger[aria-expanded="true"] {
+  border-color: var(--neutral-st2-press);
+  background: var(--neutral-bg1-hover);
+}
+
+.actionsMenu {
+  position: fixed;
+  z-index: 60;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  box-sizing: border-box;
+  width: var(--table-actions-menu-width);
+  height: var(--table-actions-menu-height);
+  padding: var(--table-actions-menu-padding);
+  gap: var(--table-actions-menu-gap);
+  background: var(--neutral-bg1-default);
+  box-shadow: var(--table-actions-menu-shadow);
+  border-radius: var(--table-actions-menu-radius);
+}
+
+.actionsMenu :global(button) {
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+}

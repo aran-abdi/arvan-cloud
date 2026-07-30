@@ -8,4 +8,19 @@
   padding: var(--header-padding-y) var(--header-padding-x);
   background: var(--neutral-bg1-default);
   border-bottom: var(--header-border-width) solid var(--neutral-st3-default);
+  gap: 16px;
+}
+
+/* Text buttons default to width:100%; keep header actions intrinsic. */
+.root > * {
+  flex: 0 0 auto;
+  width: auto;
+  max-width: 100%;
+}
+
+.root[data-fixed="true"] {
+  position: fixed;
+  top: 0;
+  inset-inline: 0;
+  z-index: 40;
 }

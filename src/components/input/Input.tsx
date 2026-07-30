@@ -116,16 +116,19 @@ export function Input({
           }
         />
 
-        {hasMessage ? (
-          <p
-            id={inputId ? `${inputId}-message` : undefined}
-            className={cn(styles.message, error && styles.messageError)}
-            style={messageStyle}
-            role={error ? "alert" : undefined}
-          >
-            {message}
-          </p>
-        ) : null}
+        <p
+          id={hasMessage && inputId ? `${inputId}-message` : undefined}
+          className={cn(
+            styles.message,
+            error && styles.messageError,
+            !hasMessage && styles.messageHidden
+          )}
+          style={messageStyle}
+          role={error && hasMessage ? "alert" : undefined}
+          aria-hidden={hasMessage ? undefined : true}
+        >
+          {hasMessage ? message : "\u00a0"}
+        </p>
       </div>
     </div>
   );

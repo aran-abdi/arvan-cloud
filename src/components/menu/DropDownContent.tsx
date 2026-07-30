@@ -28,7 +28,9 @@ export function DropDownContent({
       style={textStyle}
       {...divProps}
     >
-      <SpinnerIcon />
+      <span className={styles.icon}>
+        <SpinnerIcon />
+      </span>
       <span className={styles.label}>{label}</span>
     </div>
   );
