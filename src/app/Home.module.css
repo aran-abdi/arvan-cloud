@@ -9,7 +9,7 @@
   overflow: hidden;
   min-height: 100%;
   box-sizing: border-box;
-  padding: var(--space-32) var(--space-20);
+  padding: var(--space-32) var(--space-20) var(--space-24);
   background:
     radial-gradient(
       120% 80% at 50% -10%,
@@ -186,6 +186,42 @@
   transform: translateY(1px);
 }
 
+.credit {
+  position: absolute;
+  bottom: var(--space-20);
+  left: var(--space-20);
+  right: var(--space-20);
+  margin: 0;
+  color: var(--neutral-fg2-default);
+  font-size: var(--type-message-font-size);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--type-message-line-height);
+  letter-spacing: var(--type-letter-spacing-tight);
+  text-align: center;
+  animation: rise 640ms var(--motion-easing-standard) 200ms both;
+}
+
+.heart {
+  color: var(--error-fg1-default);
+}
+
+.creditLink {
+  color: var(--primary-fg1-default);
+  font-weight: var(--font-weight-semibold);
+  text-decoration: none;
+  transition: color var(--motion-duration-fast) var(--motion-easing-standard);
+}
+
+.creditLink:hover {
+  color: var(--primary-fg1-hover);
+}
+
+.creditLink:focus-visible {
+  outline: 2px solid var(--primary-bg2-default);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
 @keyframes rise {
   from {
     opacity: 0;
@@ -265,6 +301,7 @@
   .main,
   .copy,
   .actions,
+  .credit,
   .mark,
   .glow {
     animation: none;

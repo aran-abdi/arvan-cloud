@@ -46,6 +46,22 @@ export default function Home() {
           </Link>
         </div>
       </main>
+
+      <p className={styles.credit}>
+        Created with{" "}
+        <span className={styles.heart} aria-label="love">
+          ♥
+        </span>{" "}
+        by{" "}
+        <a
+          href="https://github.com/aran-abdi"
+          className={styles.creditLink}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Aran Abdi
+        </a>
+      </p>
     </div>
   );
 }
