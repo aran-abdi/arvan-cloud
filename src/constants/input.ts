@@ -21,3 +21,11 @@ export const INPUT_HEIGHT_VAR = {
 } as const;
 
 export const INPUT_BORDER_WIDTH_VAR = "var(--input-border-width)";
+
+export const TEXTAREA = {
+  minHeight: 120,
+} as const;
+
+export const TEXTAREA_VAR = {
+  minHeight: "var(--textarea-min-height)",
+} as const;

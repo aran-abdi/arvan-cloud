@@ -19,21 +19,66 @@ export function DesignSystemGuide() {
       <GuideSection title="Three layers">
         <GuideList>
           <li>
-            <strong>constants/</strong> — source values (heights, spacing,
-            radii) imported from TS when needed for inline styles
+            <strong>constants/</strong> — numeric source values and{" "}
+            <GuideInlineCode>*_VAR</GuideInlineCode> string refs for inline
+            styles
           </li>
           <li>
-            <strong>styles/tokens.css</strong> — CSS variables consumed by CSS
-            modules
+            <strong>styles/tokens.css</strong> — CSS custom properties consumed
+            by CSS modules (single source for visual values in stylesheets)
           </li>
           <li>
-            <strong>components/</strong> — primitives that compose both
+            <strong>components/ + features/</strong> — UI that composes both;
+            prefer <GuideInlineCode>var(--token)</GuideInlineCode> in modules
           </li>
         </GuideList>
         <p>
-          When you add a design value, update both the constant file and{" "}
-          <GuideInlineCode>tokens.css</GuideInlineCode>.
+          When you add a design value: (1) add it to the relevant file under{" "}
+          <GuideInlineCode>constants/</GuideInlineCode>, (2) mirror it in{" "}
+          <GuideInlineCode>tokens.css</GuideInlineCode>, (3) register it in{" "}
+          <GuideInlineCode>src/docs/tokens/registry.ts</GuideInlineCode> so
+          docs stay in sync.
         </p>
+      </GuideSection>
+
+      <GuideSection title="Do not hardcode">
+        <GuideList>
+          <li>
+            Avoid raw hex, px, font-size, radius, shadow, or z-index in CSS
+            modules when a token already exists
+          </li>
+          <li>
+            If nothing matches, add a token at the <em>exact</em> current value
+            so visuals stay identical
+          </li>
+          <li>
+            Media-query breakpoints stay literal (
+            <GuideInlineCode>768px</GuideInlineCode> /{" "}
+            <GuideInlineCode>1024px</GuideInlineCode>);{" "}
+            <GuideInlineCode>--bp-*</GuideInlineCode> are reference only
+          </li>
+          <li>
+            Layout keywords (<GuideInlineCode>100%</GuideInlineCode>,{" "}
+            <GuideInlineCode>auto</GuideInlineCode>, flex fractions) and runtime
+            positioning are fine without tokens
+          </li>
+        </GuideList>
+      </GuideSection>
+
+      <GuideSection title="Component docs">
+        <GuideList>
+          <li>
+            Each page under{" "}
+            <GuideInlineCode>/docs/components</GuideInlineCode> has a playground,
+            visual examples, a copyable <strong>Usage</strong> sample, then an
+            API table
+          </li>
+          <li>
+            Prefer importing from{" "}
+            <GuideInlineCode>@/components</GuideInlineCode> as shown in the
+            samples
+          </li>
+        </GuideList>
       </GuideSection>
 
       <GuideSection title="Component package">
@@ -65,8 +110,13 @@ export function DesignSystemGuide() {
 
       <GuideSection title="Adding a component">
         <GuideList>
-          <li>Create the folder under <GuideInlineCode>src/components</GuideInlineCode></li>
-          <li>Export from <GuideInlineCode>src/components/index.ts</GuideInlineCode></li>
+          <li>
+            Create the folder under{" "}
+            <GuideInlineCode>src/components</GuideInlineCode>
+          </li>
+          <li>
+            Export from <GuideInlineCode>src/components/index.ts</GuideInlineCode>
+          </li>
           <li>
             Add constants / CSS vars if the design introduces new sizes or colors
           </li>

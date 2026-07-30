@@ -56,8 +56,9 @@ export function ConventionsGuide() {
       <GuideSection title="Design & copy">
         <GuideList>
           <li>
-            Keep <GuideInlineCode>constants/*</GuideInlineCode> and{" "}
-            <GuideInlineCode>tokens.css</GuideInlineCode> aligned
+            Keep <GuideInlineCode>constants/*</GuideInlineCode>,{" "}
+            <GuideInlineCode>tokens.css</GuideInlineCode>, and{" "}
+            <GuideInlineCode>docs/tokens/registry.ts</GuideInlineCode> aligned
           </li>
           <li>
             Put user-facing strings in i18n JSON, not inline in components

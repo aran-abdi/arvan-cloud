@@ -17,7 +17,67 @@ import {
   SectionBody,
 } from "@/components";
 import { DocApiTable } from "@/docs/DocApiTable";
+import { DocCodeSample } from "@/docs/DocCodeSample";
 import styles from "@/docs/docs.module.css";
+
+const USAGE = `import { useState } from "react";
+import {
+  Table,
+  TableHeader,
+  TableBody,
+  TableRow,
+  TableHead,
+  TableCell,
+  TableRowNumber,
+  TableActions,
+  DropDownElement,
+} from "@/components";
+
+const ROWS = [
+  { id: 1, title: "Article title", author: "@author_username" },
+  { id: 2, title: "Another post", author: "@editor" },
+];
+
+export function Example() {
+  const [openRow, setOpenRow] = useState<number | null>(null);
+
+  return (
+    <Table>
+      <TableHeader>
+        <TableRow>
+          <TableHead align="index">#</TableHead>
+          <TableHead>Title</TableHead>
+          <TableHead>Author</TableHead>
+          <TableHead aria-label="Actions" />
+        </TableRow>
+      </TableHeader>
+      <TableBody>
+        {ROWS.map((row) => (
+          <TableRow key={row.id}>
+            <TableCell align="index">
+              <TableRowNumber>{row.id}</TableRowNumber>
+            </TableCell>
+            <TableCell strong>{row.title}</TableCell>
+            <TableCell>{row.author}</TableCell>
+            <TableCell>
+              <TableActions
+                open={openRow === row.id}
+                onOpenChange={(next) => setOpenRow(next ? row.id : null)}
+              >
+                <DropDownElement onClick={() => setOpenRow(null)}>
+                  Edit
+                </DropDownElement>
+                <DropDownElement onClick={() => setOpenRow(null)}>
+                  Delete
+                </DropDownElement>
+              </TableActions>
+            </TableCell>
+          </TableRow>
+        ))}
+      </TableBody>
+    </Table>
+  );
+}`;
 
 const ROWS = Array.from({ length: 10 }, (_, i) => ({
   id: i + 1,
@@ -95,6 +155,9 @@ export function TableDocs() {
           </Section>
         </div>
       </div>
+
+      <h2 className={styles.heading}>Usage</h2>
+      <DocCodeSample code={USAGE} />
 
       <h2 className={styles.heading}>API</h2>
       <DocApiTable

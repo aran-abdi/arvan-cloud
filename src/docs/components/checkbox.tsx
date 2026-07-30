@@ -4,7 +4,24 @@ import { useState } from "react";
 import { Checkbox } from "@/components";
 import type { CheckboxValue } from "@/constants";
 import { DocApiTable } from "@/docs/DocApiTable";
+import { DocCodeSample } from "@/docs/DocCodeSample";
 import styles from "@/docs/docs.module.css";
+
+const USAGE = `import { useState } from "react";
+import { Checkbox } from "@/components";
+import type { CheckboxValue } from "@/constants";
+
+export function Example() {
+  const [value, setValue] = useState<CheckboxValue>("Off");
+
+  return (
+    <Checkbox
+      value={value}
+      onValueChange={setValue}
+      label="Accept terms"
+    />
+  );
+}`;
 
 export function CheckboxDocs() {
   const [value, setValue] = useState<CheckboxValue>("Off");
@@ -51,6 +68,9 @@ export function CheckboxDocs() {
         <Checkbox value="On" disabled aria-label="On disabled" />
         <Checkbox value="Off" disabled aria-label="Off disabled" />
       </div>
+
+      <h2 className={styles.heading}>Usage</h2>
+      <DocCodeSample code={USAGE} />
 
       <h2 className={styles.heading}>API</h2>
       <DocApiTable

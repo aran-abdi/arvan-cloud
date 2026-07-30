@@ -45,8 +45,9 @@ export function ProjectStructureGuide() {
             Table, …) with CSS modules and co-located tests.
           </li>
           <li>
-            <strong>constants/</strong> + <strong>styles/tokens.css</strong> —
-            design values in TS and CSS custom properties (keep in sync).
+            <strong>constants/</strong> + <strong>styles/tokens.css</strong> +{" "}
+            <strong>docs/tokens/registry.ts</strong> — design values in TS, CSS
+            custom properties, and docs tables (keep all three in sync).
           </li>
           <li>
             <strong>lib/api/dummyjson/</strong> — HTTP client and resource

@@ -2,8 +2,8 @@
 @import "../styles/tokens.css";
 
 :root {
-  --background: #ffffff;
-  --foreground: #333333;
+  --background: var(--neutral-bg1-default);
+  --foreground: var(--neutral-fg1-default);
   /* LTR default: Inter. RTL: Yekan Bakh for Persian. */
   --font-ui: var(--font-inter), Inter, sans-serif;
 }

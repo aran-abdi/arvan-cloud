@@ -38,6 +38,7 @@ export const COLOR = {
   ptNeutralT1St2Disable: "var(--pt-neutral-t1-st2-disable)",
   ptNeutralT1Bg1Default: "var(--pt-neutral-t1-bg1-default)",
   ptNeutralT1St5Default: "var(--pt-neutral-t1-st5-default)",
+  ptNeutralT1Fg2Default: "var(--pt-neutral-t1-fg2-default)",
 } as const;
 
 export type ColorToken = (typeof COLOR)[keyof typeof COLOR];

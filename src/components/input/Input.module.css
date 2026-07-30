@@ -74,7 +74,7 @@
 
 .textarea {
   height: auto;
-  min-height: 120px;
+  min-height: var(--textarea-min-height);
 }
 
 /* error */

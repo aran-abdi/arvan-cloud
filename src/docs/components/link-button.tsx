@@ -3,7 +3,19 @@
 import { useState } from "react";
 import { LinkButton, Checkbox } from "@/components";
 import { DocApiTable } from "@/docs/DocApiTable";
+import { DocCodeSample } from "@/docs/DocCodeSample";
 import styles from "@/docs/docs.module.css";
+
+const USAGE = `import { LinkButton } from "@/components";
+
+export function Example() {
+  return (
+    <p>
+      Already have an account?{" "}
+      <LinkButton onClick={() => undefined}>Log in</LinkButton>
+    </p>
+  );
+}`;
 
 export function LinkButtonDocs() {
   const [disabled, setDisabled] = useState(false);
@@ -29,6 +41,9 @@ export function LinkButtonDocs() {
         <LinkButton>Default</LinkButton>
         <LinkButton disabled>Disabled</LinkButton>
       </div>
+
+      <h2 className={styles.heading}>Usage</h2>
+      <DocCodeSample code={USAGE} />
 
       <h2 className={styles.heading}>API</h2>
       <DocApiTable

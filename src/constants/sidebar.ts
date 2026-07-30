@@ -14,4 +14,6 @@ export const SIDEBAR_VAR = {
   itemWidth: "var(--sidebar-item-width)",
   itemMinHeight: "var(--sidebar-item-min-height)",
   itemPadding: "var(--sidebar-item-padding)",
+  drawerShadow: "var(--sidebar-drawer-shadow)",
+  drawerShadowRtl: "var(--sidebar-drawer-shadow-rtl)",
 } as const;

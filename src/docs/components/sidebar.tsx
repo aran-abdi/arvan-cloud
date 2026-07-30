@@ -3,7 +3,31 @@
 import { useState } from "react";
 import { Sidebar, SidebarItem } from "@/components";
 import { DocApiTable } from "@/docs/DocApiTable";
+import { DocCodeSample } from "@/docs/DocCodeSample";
 import styles from "@/docs/docs.module.css";
+
+const USAGE = `import { useState } from "react";
+import { Sidebar, SidebarItem } from "@/components";
+
+const ITEMS = ["Overview", "Projects", "Settings"] as const;
+
+export function Example() {
+  const [selected, setSelected] = useState<(typeof ITEMS)[number]>("Overview");
+
+  return (
+    <Sidebar fixed>
+      {ITEMS.map((item) => (
+        <SidebarItem
+          key={item}
+          selected={selected === item}
+          onClick={() => setSelected(item)}
+        >
+          {item}
+        </SidebarItem>
+      ))}
+    </Sidebar>
+  );
+}`;
 
 const ITEMS = ["Overview", "Projects", "Settings"] as const;
 
@@ -29,6 +53,9 @@ export function SidebarDocs() {
           <span>Selected: {selected}</span>
         </div>
       </div>
+
+      <h2 className={styles.heading}>Usage</h2>
+      <DocCodeSample code={USAGE} />
 
       <h2 className={styles.heading}>API</h2>
       <DocApiTable

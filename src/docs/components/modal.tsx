@@ -10,9 +10,54 @@ import {
   Button,
 } from "@/components";
 import type { ModalSize } from "@/constants/modal";
+import { RADIUS, SPACE, TYPE } from "@/constants";
 import type { ModalStatusVariant } from "@/components/modal";
 import { DocApiTable } from "@/docs/DocApiTable";
+import { DocCodeSample } from "@/docs/DocCodeSample";
 import styles from "@/docs/docs.module.css";
+
+const USAGE = `import { useState } from "react";
+import {
+  Modal,
+  ModalHeader,
+  ModalBody,
+  ModalFooter,
+  ModalStatusIcon,
+  Button,
+} from "@/components";
+
+export function Example() {
+  const [open, setOpen] = useState(false);
+
+  return (
+    <>
+      <Button variant="Primary" layout="Text" onClick={() => setOpen(true)}>
+        Open modal
+      </Button>
+
+      <Modal open={open} size={600} onClose={() => setOpen(false)}>
+        <ModalHeader>
+          <div>
+            <div>title</div>
+            <div>description</div>
+          </div>
+        </ModalHeader>
+        <ModalBody>
+          <ModalStatusIcon variant="success" />
+          <p>dialogue message</p>
+        </ModalBody>
+        <ModalFooter>
+          <Button variant="Secondary" layout="Text" onClick={() => setOpen(false)}>
+            Cancel
+          </Button>
+          <Button variant="Primary" layout="Text" onClick={() => setOpen(false)}>
+            Confirm
+          </Button>
+        </ModalFooter>
+      </Modal>
+    </>
+  );
+}`;
 
 function TitleBlock() {
   return (
@@ -20,10 +65,10 @@ function TitleBlock() {
       <div
         style={{
           fontFamily: "var(--font-ui)",
-          fontSize: 18,
-          fontWeight: 600,
-          lineHeight: "24px",
-          letterSpacing: "-0.02em",
+          fontSize: TYPE.title.fontSize,
+          fontWeight: TYPE.title.fontWeight,
+          lineHeight: `${TYPE.title.lineHeight}px`,
+          letterSpacing: TYPE.title.letterSpacing,
           color: "var(--neutral-fg1-default)",
         }}
       >
@@ -32,10 +77,10 @@ function TitleBlock() {
       <div
         style={{
           fontFamily: "var(--font-ui)",
-          fontSize: 14,
-          fontWeight: 400,
-          lineHeight: "20px",
-          letterSpacing: "-0.02em",
+          fontSize: TYPE.sectionDescription.fontSize,
+          fontWeight: TYPE.sectionDescription.fontWeight,
+          lineHeight: `${TYPE.sectionDescription.lineHeight}px`,
+          letterSpacing: TYPE.sectionDescription.letterSpacing,
           color: "var(--neutral-fg2-default)",
         }}
       >
@@ -52,7 +97,7 @@ function StatusMessage({ variant }: { variant: ModalStatusVariant }) {
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
-        gap: 16,
+        gap: SPACE[16],
         textAlign: "center",
       }}
     >
@@ -60,10 +105,10 @@ function StatusMessage({ variant }: { variant: ModalStatusVariant }) {
       <div
         style={{
           fontFamily: "var(--font-ui)",
-          fontSize: 14,
-          fontWeight: 400,
-          lineHeight: "20px",
-          letterSpacing: "-0.02em",
+          fontSize: TYPE.input.fontSize,
+          fontWeight: TYPE.input.fontWeight,
+          lineHeight: `${TYPE.input.lineHeight}px`,
+          letterSpacing: TYPE.input.letterSpacing,
           color: "var(--neutral-fg1-default)",
         }}
       >
@@ -81,12 +126,12 @@ function ReplaceMe() {
         alignItems: "center",
         justifyContent: "center",
         minHeight: 120,
-        borderRadius: 8,
+        borderRadius: RADIUS[8],
         background: "var(--primary-bg1-default)",
         fontFamily: "var(--font-ui)",
-        fontSize: 14,
-        fontWeight: 600,
-        lineHeight: "20px",
+        fontSize: TYPE.input.fontSize,
+        fontWeight: TYPE.message.fontWeight,
+        lineHeight: `${TYPE.input.lineHeight}px`,
         color: "var(--neutral-fg1-default)",
       }}
     >
@@ -230,6 +275,9 @@ export function ModalDocs() {
           <FooterDelete />
         </Modal>
       </ExampleStack>
+
+      <h2 className={styles.heading}>Usage</h2>
+      <DocCodeSample code={USAGE} />
 
       <h2 className={styles.heading}>API</h2>
       <DocApiTable

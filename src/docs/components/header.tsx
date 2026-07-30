@@ -3,7 +3,24 @@
 import { useState } from "react";
 import { Header, Button, Input } from "@/components";
 import { DocApiTable } from "@/docs/DocApiTable";
+import { DocCodeSample } from "@/docs/DocCodeSample";
 import styles from "@/docs/docs.module.css";
+
+const USAGE = `import { Header, Button } from "@/components";
+
+export function Example() {
+  return (
+    <Header fixed>
+      <span>
+        Welcome <strong>Aran</strong>
+      </span>
+      <span>Arvancloud Challenge</span>
+      <Button variant="Secondary" layout="Text">
+        Log out
+      </Button>
+    </Header>
+  );
+}`;
 
 export function HeaderDocs() {
   const [user, setUser] = useState("Aran");
@@ -34,6 +51,9 @@ export function HeaderDocs() {
           </div>
         </div>
       </div>
+
+      <h2 className={styles.heading}>Usage</h2>
+      <DocCodeSample code={USAGE} />
 
       <h2 className={styles.heading}>API</h2>
       <DocApiTable

@@ -15,4 +15,5 @@ export * from "./header";
 export * from "./table";
 export * from "./login";
 export * from "./dashboard";
+export * from "./articles";
 

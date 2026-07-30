@@ -3,7 +3,23 @@
 import { useState } from "react";
 import { Pagination, Checkbox } from "@/components";
 import { DocApiTable } from "@/docs/DocApiTable";
+import { DocCodeSample } from "@/docs/DocCodeSample";
 import styles from "@/docs/docs.module.css";
+
+const USAGE = `import { useState } from "react";
+import { Pagination } from "@/components";
+
+export function Example() {
+  const [page, setPage] = useState(1);
+
+  return (
+    <Pagination
+      totalPages={10}
+      currentPage={page}
+      onPageChange={setPage}
+    />
+  );
+}`;
 
 export function PaginationDocs() {
   const [page, setPage] = useState(5);
@@ -53,6 +69,9 @@ export function PaginationDocs() {
         <Pagination totalPages={10} currentPage={5} onPageChange={() => undefined} />
         <Pagination totalPages={10} currentPage={5} onPageChange={() => undefined} disabled />
       </div>
+
+      <h2 className={styles.heading}>Usage</h2>
+      <DocCodeSample code={USAGE} />
 
       <h2 className={styles.heading}>API</h2>
       <DocApiTable

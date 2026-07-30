@@ -1,7 +1,7 @@
 .layout {
   display: flex;
   align-items: flex-start;
-  gap: 24px;
+  gap: var(--articles-form-layout-gap);
   width: 100%;
 }
 
@@ -13,56 +13,56 @@
 }
 
 .tagsSection {
-  flex: 0 0 280px;
-  width: 280px;
+  flex: 0 0 var(--articles-form-tags-width);
+  width: var(--articles-form-tags-width);
   max-width: 100%;
 }
 
 .header {
-  padding: 38px 24px;
+  padding: var(--articles-header-padding-y) var(--articles-header-padding-x);
 }
 
 .body {
   min-height: 0;
-  padding: 38px 24px;
+  padding: var(--articles-body-padding-y-form) var(--articles-header-padding-x);
 }
 
 .form {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: var(--articles-form-fields-gap);
 }
 
 .submit {
   align-self: flex-start;
-  margin-block-start: 12px;
+  margin-block-start: var(--articles-form-fields-gap);
   width: auto;
 }
 
 .tagsBody {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: var(--articles-form-fields-gap);
 }
 
 .tagList {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: var(--articles-form-tags-list-gap);
   box-sizing: border-box;
-  max-height: 360px;
+  max-height: var(--articles-form-tags-list-max-height);
   overflow: auto;
-  padding: 12px;
-  border: 1px solid var(--neutral-st2-default);
-  border-radius: 8px;
+  padding: var(--articles-form-tags-list-padding);
+  border: var(--input-border-width) solid var(--neutral-st2-default);
+  border-radius: var(--articles-form-tags-list-radius);
   background: var(--neutral-bg1-default);
 }
 
 .tagEmpty {
   margin: 0;
   font-family: var(--font-ui);
-  font-size: 14px;
-  line-height: 20px;
+  font-size: var(--type-input-font-size);
+  line-height: var(--type-input-line-height);
   color: var(--neutral-fg2-default);
 }
 
@@ -93,27 +93,29 @@
 
   .tagsSection {
     flex: 0 0 auto;
-    border-block-start: 1px solid var(--neutral-st3-default);
+    border-block-start: var(--section-border-width) solid var(--neutral-st3-default);
   }
 
   .header {
-    padding: 20px 12px;
+    padding: var(--articles-header-padding-y-tablet)
+      var(--articles-header-padding-x-tablet);
   }
 
   .body {
     flex: 1 1 auto;
     min-height: 0;
-    padding: 12px;
+    padding: var(--articles-body-padding-compact);
   }
 }
 
 @media (max-width: 767px) {
   .header {
-    padding: 16px 12px;
+    padding: var(--articles-header-padding-y-mobile)
+      var(--articles-header-padding-x-mobile);
   }
 
   .body {
-    padding: 12px;
+    padding: var(--articles-body-padding-compact);
   }
 
   .submit {

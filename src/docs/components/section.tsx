@@ -2,8 +2,23 @@
 
 import { useState } from "react";
 import { Section, SectionHeader, SectionBody, Input } from "@/components";
+import { RADIUS, TYPE } from "@/constants";
 import { DocApiTable } from "@/docs/DocApiTable";
+import { DocCodeSample } from "@/docs/DocCodeSample";
 import styles from "@/docs/docs.module.css";
+
+const USAGE = `import { Section, SectionHeader, SectionBody } from "@/components";
+
+export function Example() {
+  return (
+    <Section>
+      <SectionHeader title="Title" description="Description" />
+      <SectionBody>
+        <p>Section content goes here.</p>
+      </SectionBody>
+    </Section>
+  );
+}`;
 
 function ReplaceMe() {
   return (
@@ -15,12 +30,12 @@ function ReplaceMe() {
         flex: 1,
         width: "100%",
         minHeight: 208,
-        borderRadius: 8,
+        borderRadius: RADIUS[8],
         background: "var(--primary-bg1-default)",
         fontFamily: "var(--font-ui)",
-        fontSize: 14,
-        fontWeight: 600,
-        lineHeight: "20px",
+        fontSize: TYPE.input.fontSize,
+        fontWeight: TYPE.message.fontWeight,
+        lineHeight: `${TYPE.input.lineHeight}px`,
         color: "var(--primary-fg1-default)",
       }}
     >
@@ -74,6 +89,9 @@ export function SectionDocs() {
           </SectionBody>
         </Section>
       </div>
+
+      <h2 className={styles.heading}>Usage</h2>
+      <DocCodeSample code={USAGE} />
 
       <h2 className={styles.heading}>API</h2>
       <DocApiTable

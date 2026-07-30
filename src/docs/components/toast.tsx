@@ -4,7 +4,33 @@ import { useState } from "react";
 import { Toast, Button, Checkbox } from "@/components";
 import type { ToastType } from "@/constants";
 import { DocApiTable } from "@/docs/DocApiTable";
+import { DocCodeSample } from "@/docs/DocCodeSample";
 import styles from "@/docs/docs.module.css";
+
+const USAGE = `import { Button, useToast } from "@/components";
+
+export function Example() {
+  const { showToast } = useToast();
+
+  return (
+    <Button
+      variant="Primary"
+      layout="Text"
+      onClick={() =>
+        showToast({
+          type: "Success",
+          title: "Saved",
+          description: "Your changes were applied.",
+        })
+      }
+    >
+      Save
+    </Button>
+  );
+}
+
+// App root already wraps with <ToastProvider>.
+// Prefer useToast() in product UI; use <Toast /> for static previews.`;
 
 export function ToastDocs() {
   const [type, setType] = useState<ToastType>("Success");
@@ -58,6 +84,9 @@ export function ToastDocs() {
         <Toast type="Error" title="Failed" description="Try again" action />
       </div>
 
+      <h2 className={styles.heading}>Usage</h2>
+      <DocCodeSample code={USAGE} />
+
       <h2 className={styles.heading}>API</h2>
       <DocApiTable
         rows={[
@@ -66,6 +95,7 @@ export function ToastDocs() {
           { name: "description", type: "ReactNode", description: "Secondary description text." },
           { name: "action", type: "boolean", defaultValue: "false", description: "true = dismiss on click; false = auto-dismiss in 3s." },
           { name: "onDismiss", type: "() => void", description: "Called when the toast is dismissed." },
+          { name: "useToast().showToast", type: "ShowToastInput => void", description: "Imperative API for app flows." },
         ]}
       />
     </>

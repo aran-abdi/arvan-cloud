@@ -5,7 +5,33 @@ import { Button, Checkbox } from "@/components";
 import { CircleCheckIcon } from "@/components/icons";
 import type { ButtonLayout, ButtonVariant } from "@/constants";
 import { DocApiTable } from "@/docs/DocApiTable";
+import { DocCodeSample } from "@/docs/DocCodeSample";
 import styles from "@/docs/docs.module.css";
+
+const USAGE = `import { Button } from "@/components";
+import { CircleCheckIcon } from "@/components/icons";
+
+export function Example() {
+  return (
+    <>
+      <Button variant="Primary" layout="Text">
+        Save
+      </Button>
+      <Button variant="Secondary" layout="Text">
+        Cancel
+      </Button>
+      <Button
+        variant="Primary"
+        layout="Icon"
+        icon={<CircleCheckIcon />}
+        aria-label="Confirm"
+      />
+      <Button variant="Primary" layout="Text" loading>
+        Saving…
+      </Button>
+    </>
+  );
+}`;
 
 export function ButtonDocs() {
   const [variant, setVariant] = useState<ButtonVariant>("Primary");
@@ -73,6 +99,9 @@ export function ButtonDocs() {
         <Button variant="Primary" layout="Icon" icon={<CircleCheckIcon />} />
         <Button variant="Primary" layout="Text" loading>Loading</Button>
       </div>
+
+      <h2 className={styles.heading}>Usage</h2>
+      <DocCodeSample code={USAGE} />
 
       <h2 className={styles.heading}>API</h2>
       <DocApiTable

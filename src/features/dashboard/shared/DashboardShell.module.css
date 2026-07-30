@@ -38,7 +38,7 @@
 .headerStart {
   display: inline-flex;
   align-items: center;
-  gap: 12px;
+  gap: var(--dashboard-header-start-gap);
   min-width: 0;
 }
 
@@ -55,13 +55,14 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 6px 12px;
-  border-radius: 8px;
+  padding: var(--dashboard-center-label-padding-y)
+    var(--dashboard-center-label-padding-x);
+  border-radius: var(--dashboard-center-label-radius);
   background: var(--primary-bg1-default);
   font-family: var(--font-ui);
-  font-size: 14px;
-  font-weight: 600;
-  line-height: 20px;
+  font-size: var(--type-input-font-size);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--type-input-line-height);
   color: var(--primary-fg1-default);
   max-width: 100%;
   overflow: hidden;
@@ -71,9 +72,9 @@
 
 .welcome {
   font-family: var(--font-ui);
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 20px;
+  font-size: var(--type-input-font-size);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--type-input-line-height);
   color: var(--neutral-fg1-default);
   overflow: hidden;
   text-overflow: ellipsis;
@@ -82,7 +83,7 @@
 }
 
 .welcomeName {
-  font-weight: 600;
+  font-weight: var(--font-weight-semibold);
 }
 
 .logoutForm {
@@ -113,8 +114,8 @@
   }
 
   .header {
-    padding-inline: 16px;
-    gap: 12px;
+    padding-inline: var(--dashboard-header-padding-x-tablet);
+    gap: var(--dashboard-header-gap-tablet);
   }
 
   .header > .headerStart {
@@ -126,7 +127,7 @@
   .header > .centerLabel {
     flex: 0 1 auto;
     min-width: 0;
-    max-width: 40%;
+    max-width: var(--dashboard-center-label-max-width-tablet);
   }
 
   .sidebar {
@@ -150,11 +151,11 @@
     transform: translate3d(0, 0, 0);
     pointer-events: auto;
     visibility: visible;
-    box-shadow: 8px 0 24px rgb(0 0 0 / 16%);
+    box-shadow: var(--sidebar-drawer-shadow);
   }
 
   :global([dir="rtl"]) .shell[data-nav-open="true"] .sidebar {
-    box-shadow: -8px 0 24px rgb(0 0 0 / 16%);
+    box-shadow: var(--sidebar-drawer-shadow-rtl);
   }
 
   .backdrop {
@@ -191,8 +192,8 @@
   }
 
   .header {
-    padding-inline: 12px;
-    gap: 8px;
+    padding-inline: var(--dashboard-header-padding-x-mobile);
+    gap: var(--dashboard-header-gap-mobile);
   }
 
   .header > .headerStart {
@@ -204,10 +205,11 @@
   .header > .centerLabel {
     flex: 0 1 auto;
     min-width: 0;
-    max-width: 42%;
-    padding: 4px 8px;
-    font-size: 12px;
-    line-height: 16px;
+    max-width: var(--dashboard-center-label-max-width-mobile);
+    padding: var(--dashboard-center-label-padding-y-mobile)
+      var(--dashboard-center-label-padding-x-mobile);
+    font-size: var(--type-message-font-size);
+    line-height: var(--type-message-line-height);
   }
 
   .header > .logoutForm {
@@ -215,11 +217,11 @@
   }
 
   .headerStart {
-    gap: 8px;
+    gap: var(--dashboard-header-start-gap-mobile);
   }
 
   .welcome {
-    font-size: 13px;
+    font-size: var(--type-compact-font-size);
   }
 }
 

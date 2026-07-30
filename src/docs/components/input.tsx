@@ -4,7 +4,41 @@ import { useState } from "react";
 import { Input, Checkbox } from "@/components";
 import type { InputSize } from "@/constants";
 import { DocApiTable } from "@/docs/DocApiTable";
+import { DocCodeSample } from "@/docs/DocCodeSample";
 import styles from "@/docs/docs.module.css";
+
+const USAGE = `import { useState } from "react";
+import { Input, Textarea } from "@/components";
+
+export function Example() {
+  const [title, setTitle] = useState("");
+
+  return (
+    <>
+      <Input
+        id="title"
+        label="Title"
+        required
+        placeholder="Article title"
+        value={title}
+        onChange={(e) => setTitle(e.target.value)}
+        message="Keep it short and clear"
+      />
+      <Input
+        id="tags"
+        label="Tags"
+        error
+        message="At least one tag is required"
+      />
+      <Textarea
+        id="body"
+        label="Body"
+        size="lg"
+        placeholder="Write the article…"
+      />
+    </>
+  );
+}`;
 
 export function InputDocs() {
   const [size, setSize] = useState<InputSize>("md");
@@ -91,6 +125,9 @@ export function InputDocs() {
           </div>
         </div>
       </div>
+
+      <h2 className={styles.heading}>Usage</h2>
+      <DocCodeSample code={USAGE} />
 
       <h2 className={styles.heading}>API</h2>
       <DocApiTable

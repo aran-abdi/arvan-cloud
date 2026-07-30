@@ -9,7 +9,37 @@ import {
   Checkbox,
 } from "@/components";
 import { DocApiTable } from "@/docs/DocApiTable";
+import { DocCodeSample } from "@/docs/DocCodeSample";
 import styles from "@/docs/docs.module.css";
+
+const USAGE = `import { useState } from "react";
+import {
+  Button,
+  DropDownMenu,
+  DropDownElement,
+  DropDownContent,
+} from "@/components";
+
+export function Example() {
+  const [open, setOpen] = useState(false);
+
+  return (
+    <>
+      <Button
+        variant="Secondary"
+        layout="Text"
+        onClick={() => setOpen((value) => !value)}
+      >
+        Options
+      </Button>
+      <DropDownMenu open={open}>
+        <DropDownElement onClick={() => setOpen(false)}>Edit</DropDownElement>
+        <DropDownElement onClick={() => setOpen(false)}>Delete</DropDownElement>
+        <DropDownContent label="loading..." />
+      </DropDownMenu>
+    </>
+  );
+}`;
 
 export function MenuDocs() {
   const [open, setOpen] = useState(true);
@@ -50,6 +80,9 @@ export function MenuDocs() {
         <DropDownElement disabled>Disabled</DropDownElement>
         <DropDownContent label="loading..." />
       </div>
+
+      <h2 className={styles.heading}>Usage</h2>
+      <DocCodeSample code={USAGE} />
 
       <h2 className={styles.heading}>API</h2>
       <DocApiTable

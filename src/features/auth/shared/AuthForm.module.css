@@ -99,7 +99,7 @@
 @media (min-width: 768px) {
   .page {
     align-items: center;
-    padding: 24px;
+    padding: var(--login-page-padding-tablet);
   }
 
   .card {
@@ -110,6 +110,6 @@
 
 @media (min-width: 1024px) {
   .page {
-    padding: 40px;
+    padding: var(--login-page-padding-desktop);
   }
 }

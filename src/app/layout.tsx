@@ -13,16 +13,15 @@ export const metadata: Metadata = {
   title: "Arvan",
   description:
     "Arvan dashboard and shared UI — manage articles and explore the component library.",
-  // Explicit public URLs (versioned) — Safari ignores hard refresh for /favicon.ico
-  // and often skips Next's hashed app/icon links.
+  // Unique /brand/* paths — Safari permanently caches /favicon.ico per host
+  // (even private windows) and still shows the old Next.js icon for localhost.
   icons: {
     icon: [
-      { url: "/favicon-arvan.ico", sizes: "48x48" },
-      { url: "/arvan-icon.png", type: "image/png", sizes: "32x32" },
-      { url: "/arvan-icon.svg", type: "image/svg+xml" },
+      { url: "/brand/icon.png", type: "image/png", sizes: "32x32" },
+      { url: "/brand/icon.ico", type: "image/x-icon", sizes: "any" },
     ],
-    shortcut: "/favicon-arvan.ico",
-    apple: [{ url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" }],
+    shortcut: "/brand/icon.ico",
+    apple: "/brand/apple-touch-icon.png",
   },
 };
 
@@ -37,7 +36,6 @@ export default function RootLayout({
       className={`${inter.variable} ${yekanBakh.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col font-sans">
-        {/* Drop stale localhost service workers that cause Firefox reload loops. */}
         <script
           dangerouslySetInnerHTML={{
             __html: `if("serviceWorker"in navigator){navigator.serviceWorker.getRegistrations().then(function(r){r.forEach(function(x){x.unregister()})});if(navigator.serviceWorker.getRegistrations&&caches){caches.keys().then(function(k){k.forEach(function(n){caches.delete(n)})})}}`,

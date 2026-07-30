@@ -27,5 +27,11 @@ export const TOAST_VAR = {
   minWidthError: "var(--toast-min-width-error)",
   radius: "var(--toast-radius)",
   shadow: "var(--toast-shadow)",
+  offsetTopMobile: "var(--toast-offset-top-mobile)",
+  offsetTopTablet: "var(--toast-offset-top-tablet)",
+  offsetTopDesktop: "var(--toast-offset-top-desktop)",
+  offsetXMobile: "var(--toast-offset-x-mobile)",
+  maxWidth: "var(--toast-max-width)",
+  zIndex: "var(--z-toast)",
 } as const;
 

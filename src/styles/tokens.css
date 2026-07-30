@@ -45,8 +45,10 @@
   /* Shared type / weight */
   --font-weight-regular: 400;
   --font-weight-medium: 450;
+  --font-weight-medium-500: 500;
   --font-weight-semibold: 600;
   --type-letter-spacing-tight: -0.02em;
+  --type-letter-spacing-wide: 0.04em;
 
   /* Motion */
   --motion-duration-fast: 120ms;
@@ -60,13 +62,32 @@
   --z-header: 40;
   --z-modal: 50;
   --z-popover: 60;
+  --z-toast: 1100;
 
-  /* Spacing (from constants/spacing.ts) */
-  --space-field-label-gap: 8px;
-  --space-field-message-gap: 8px;
-  --space-input-padding-x: 12px;
+  /* Spacing scale (from constants/spacing.ts) */
+  --space-4: 4px;
+  --space-6: 6px;
+  --space-8: 8px;
+  --space-10: 10px;
+  --space-12: 12px;
+  --space-16: 16px;
+  --space-18: 18px;
+  --space-20: 20px;
+  --space-24: 24px;
+  --space-28: 28px;
+  --space-32: 32px;
+  --space-38: 38px;
+  --space-40: 40px;
+
+  /* Field spacing (aliases into the scale) */
+  --space-field-label-gap: var(--space-8);
+  --space-field-message-gap: var(--space-8);
+  --space-input-padding-x: var(--space-12);
 
   /* Radius (from constants/radius.ts) */
+  --radius-2: 2px;
+  --radius-4: 4px;
+  --radius-6: 6px;
   --radius-input: 8px;
 
   /* Input sizes (from constants/input.ts) */
@@ -74,6 +95,7 @@
   --input-height-md: 40px;
   --input-height-lg: 48px;
   --input-border-width: 1px;
+  --textarea-min-height: 120px;
 
   /* Checkbox (16x16) */
   --checkbox-size: 16px;
@@ -96,6 +118,23 @@
   --type-message-line-height: 16px;
   --type-message-font-weight: var(--font-weight-semibold);
   --type-message-letter-spacing: var(--type-letter-spacing-tight);
+  --type-compact-font-size: 13px;
+  --type-compact-line-height: 18px;
+  --type-compact-font-weight: var(--font-weight-regular);
+  --type-compact-letter-spacing: var(--type-letter-spacing-tight);
+  --type-caption-font-size: 11px;
+  --type-caption-line-height: 16px;
+  --type-caption-font-weight: var(--font-weight-semibold);
+  --type-caption-letter-spacing: var(--type-letter-spacing-wide);
+  --type-body-relaxed-line-height: 22px;
+  --type-title-font-size: 18px;
+  --type-title-line-height: 24px;
+  --type-title-font-weight: var(--font-weight-semibold);
+  --type-title-letter-spacing: var(--type-letter-spacing-tight);
+  --type-heading-font-size: 16px;
+  --type-heading-line-height: 24px;
+  --type-heading-font-weight: var(--font-weight-semibold);
+  --type-heading-letter-spacing: var(--type-letter-spacing-tight);
 
   /* Toast */
   --toast-shadow: 0px 8px 40px 0px #2533433D;
@@ -166,6 +205,8 @@
   --sidebar-item-min-height: 40px;
   --sidebar-item-padding: 8px;
   --sidebar-border-width: 1px;
+  --sidebar-drawer-shadow: 8px 0 24px rgb(0 0 0 / 16%);
+  --sidebar-drawer-shadow-rtl: -8px 0 24px rgb(0 0 0 / 16%);
 
   /* Header panel */
   --header-height: 64px;
@@ -191,6 +232,7 @@
   --modal-icon-wrapper-padding: 16px;
   --modal-icon-wrapper-radius: 96px;
   --modal-icon-size: 24px;
+  --modal-viewport-gutter: var(--space-32);
 
   /* Table */
   --table-row-height: 48px;
@@ -225,19 +267,21 @@
 
   /* Login */
   --login-page-bg: #f0f0f0;
+  --login-page-padding-tablet: var(--space-24);
+  --login-page-padding-desktop: var(--space-40);
   --login-card-width: 480px;
   --login-card-radius: 8px;
   --login-card-shadow: none;
   --login-card-bg: #ffffff;
-  --login-header-padding-x: 24px;
-  --login-header-padding-y: 38px;
+  --login-header-padding-x: var(--space-24);
+  --login-header-padding-y: var(--space-38);
   --login-header-border-width: 1px;
   --login-header-border: var(--neutral-st3-default);
-  --login-body-padding: 24px;
-  --login-fields-gap: 12px;
-  --login-fields-to-submit-gap: 24px;
-  --login-submit-to-footer-gap: 12px;
-  --login-footer-gap: 4px;
+  --login-body-padding: var(--space-24);
+  --login-fields-gap: var(--space-12);
+  --login-fields-to-submit-gap: var(--space-24);
+  --login-submit-to-footer-gap: var(--space-12);
+  --login-footer-gap: var(--space-4);
   --login-title-font-size: 18px;
   --login-title-line-height: 24px;
   --login-title-font-weight: var(--font-weight-semibold);
@@ -253,6 +297,71 @@
 
   /* Dashboard */
   --dashboard-page-bg: #f0f0f0;
-  --dashboard-content-padding: 24px;
-  --dashboard-content-gap: 24px;
+  --dashboard-content-padding: var(--space-24);
+  --dashboard-content-gap: var(--space-24);
+  --dashboard-header-start-gap: var(--space-12);
+  --dashboard-header-start-gap-mobile: var(--space-8);
+  --dashboard-header-padding-x-tablet: var(--space-16);
+  --dashboard-header-padding-x-mobile: var(--space-12);
+  --dashboard-header-gap-tablet: var(--space-12);
+  --dashboard-header-gap-mobile: var(--space-8);
+  --dashboard-center-label-padding-y: var(--space-6);
+  --dashboard-center-label-padding-x: var(--space-12);
+  --dashboard-center-label-padding-y-mobile: var(--space-4);
+  --dashboard-center-label-padding-x-mobile: var(--space-8);
+  --dashboard-center-label-radius: var(--radius-input);
+  --dashboard-center-label-max-width-tablet: 40%;
+  --dashboard-center-label-max-width-mobile: 42%;
+
+  /* Articles */
+  --articles-header-padding-y: var(--space-38);
+  --articles-header-padding-x: var(--space-24);
+  --articles-header-padding-y-tablet: var(--space-20);
+  --articles-header-padding-x-tablet: var(--space-12);
+  --articles-header-padding-y-mobile: var(--space-16);
+  --articles-header-padding-x-mobile: var(--space-12);
+  --articles-body-padding: var(--space-24);
+  --articles-body-padding-y-form: var(--space-38);
+  --articles-body-padding-compact: var(--space-12);
+  --articles-content-gap: var(--space-16);
+  --articles-content-gap-tablet: var(--space-12);
+  --articles-table-min-width: 760px;
+  --articles-col-index-width: 72px;
+  --articles-col-actions-width: 64px;
+  --articles-card-gap: var(--space-12);
+  --articles-card-gap-mobile: var(--space-8);
+  --articles-card-padding: var(--space-16);
+  --articles-card-padding-mobile: var(--space-12);
+  --articles-card-radius: var(--radius-input);
+  --articles-card-border-width: 1px;
+  --articles-card-index-size: var(--table-row-number-size);
+  --articles-card-index-padding-x: var(--space-6);
+  --articles-card-index-radius: var(--radius-6);
+  --articles-card-meta-label-width: 72px;
+  --articles-card-meta-gap: var(--space-8);
+  --articles-form-layout-gap: var(--space-24);
+  --articles-form-fields-gap: var(--space-12);
+  --articles-form-tags-width: 280px;
+  --articles-form-tags-list-max-height: 360px;
+  --articles-form-tags-list-padding: var(--space-12);
+  --articles-form-tags-list-gap: var(--space-8);
+  --articles-form-tags-list-radius: var(--radius-input);
+  --articles-delete-status-gap: var(--space-16);
+
+  /* Docs site */
+  --docs-page-bg: #e8e8e8;
+  --docs-stage-bg: #dddddd;
+  --docs-table-header-bg: #f5f5f5;
+  --docs-card-shadow: 0 1px 3px rgb(0 0 0 / 6%);
+  --docs-inline-code-bg: rgb(0 0 0 / 6%);
+  --docs-content-padding: var(--space-24);
+  --docs-content-gap: var(--space-24);
+  --docs-playground-padding: var(--space-28);
+  --docs-playground-min-height: 96px;
+  --docs-control-min-width: 140px;
+  --docs-guide-max-width: 720px;
+  --docs-guide-gap: var(--space-28);
+  --docs-guide-section-gap: var(--space-12);
+  --docs-token-swatch-size: 28px;
+  --docs-token-shadow-preview-width: 40px;
 }
