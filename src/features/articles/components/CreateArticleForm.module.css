@@ -33,16 +33,38 @@
   gap: var(--articles-form-fields-gap);
 }
 
-.submit {
+.submitBar {
   align-self: flex-start;
   margin-block-start: var(--articles-form-fields-gap);
+  width: auto;
+}
+
+.submit {
   width: auto;
 }
 
 .tagsBody {
   display: flex;
   flex-direction: column;
-  gap: var(--articles-form-fields-gap);
+  padding: var(--space-24);
+}
+
+.tagsTitle {
+  margin: 0 0 var(--space-8);
+  font-family: var(--font-ui);
+  font-size: var(--type-label-font-size);
+  font-weight: var(--type-label-font-weight);
+  line-height: var(--type-label-line-height);
+  letter-spacing: var(--type-label-letter-spacing);
+  color: var(--neutral-fg1-default);
+  text-align: start;
+  vertical-align: middle;
+}
+
+.tagsControls {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-24);
 }
 
 .tagList {
@@ -75,6 +97,10 @@
     min-height: calc(100vh - var(--header-height));
     min-height: calc(100dvh - var(--header-height));
     gap: 0;
+    /* Leave room for the fixed submit bar */
+    padding-bottom: calc(
+      var(--button-height) + (var(--articles-form-submit-bar-padding) * 2)
+    );
   }
 
   .formSection,
@@ -106,6 +132,27 @@
     min-height: 0;
     padding: var(--articles-body-padding-compact);
   }
+
+  .tagsBody {
+    padding: var(--space-24);
+  }
+
+  .submitBar {
+    position: fixed;
+    inset-inline: 0;
+    bottom: 0;
+    z-index: var(--articles-form-submit-bar-z);
+    box-sizing: border-box;
+    width: 100%;
+    margin: 0;
+    padding: var(--articles-form-submit-bar-padding);
+    background: var(--neutral-bg1-default);
+    border-block-start: var(--section-border-width) solid var(--neutral-st3-default);
+  }
+
+  .submit {
+    width: 100%;
+  }
 }
 
 @media (max-width: 767px) {
@@ -118,8 +165,7 @@
     padding: var(--articles-body-padding-compact);
   }
 
-  .submit {
-    align-self: stretch;
-    width: 100%;
+  .tagsBody {
+    padding: var(--space-24);
   }
 }

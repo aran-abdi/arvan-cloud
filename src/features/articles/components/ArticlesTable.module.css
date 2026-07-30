@@ -228,6 +228,21 @@
     min-height: 100%;
   }
 
+  .tableView {
+    display: none;
+  }
+
+  .cardList {
+    display: flex;
+    gap: var(--articles-card-gap-tablet);
+  }
+
+  .card {
+    border-radius: var(--articles-card-radius);
+    border: var(--articles-card-border-width) solid var(--neutral-st3-default);
+    padding: var(--articles-card-padding-mobile);
+  }
+
   .pagination {
     margin-block-start: auto;
     padding: 0;
@@ -249,18 +264,11 @@
     padding: var(--articles-body-padding-compact);
   }
 
-  .tableView {
-    display: none;
-  }
-
   .cardList {
-    display: flex;
     gap: var(--articles-card-gap-mobile);
   }
 
   .card {
-    border-radius: var(--articles-card-radius);
-    border: var(--articles-card-border-width) solid var(--neutral-st3-default);
     padding: var(--articles-card-padding-mobile);
   }
 

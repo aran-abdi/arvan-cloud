@@ -449,7 +449,7 @@ export const TOKEN_NAV: readonly TokenCategory[] = [
       { name: "--articles-table-min-width", value: "760px", description: "Desktop table min width.", kind: "size" },
       { name: "--articles-card-radius", value: "var(--radius-input)", description: "Mobile card radius.", kind: "size" },
       { name: "--articles-card-index-radius", value: "var(--radius-6)", description: "Card index badge radius.", kind: "size" },
-      { name: "--articles-form-tags-width", value: "280px", description: "Tags panel width on desktop.", kind: "size" },
+      { name: "--articles-form-tags-width", value: "376px", description: "Tags panel width on desktop.", kind: "size" },
       { name: "--articles-form-tags-list-max-height", value: "360px", description: "Tags list scroll max height.", kind: "size" },
       { name: "--articles-delete-status-gap", value: "var(--space-16)", description: "Delete modal status stack gap.", kind: "size" },
     ],

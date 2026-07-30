@@ -14,6 +14,7 @@ export const ARTICLES = {
   colIndexWidth: 72,
   colActionsWidth: 64,
   cardGap: 12,
+  cardGapTablet: 8,
   cardGapMobile: 8,
   cardPadding: 16,
   cardPaddingMobile: 12,
@@ -22,8 +23,9 @@ export const ARTICLES = {
   cardMetaLabelWidth: 72,
   formLayoutGap: 24,
   formFieldsGap: 12,
-  formTagsWidth: 280,
+  formTagsWidth: 376,
   formTagsListMaxHeight: 360,
+  formSubmitBarPadding: 12,
   deleteStatusGap: 16,
 } as const;
 

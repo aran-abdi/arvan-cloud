@@ -212,62 +212,66 @@ export function CreateArticleForm({
               }}
             />
 
-            <Button
-              type="submit"
-              variant="Primary"
-              layout="Text"
-              className={styles.submit}
-              loading={submitting}
-              disabled={submitting}
-            >
-              {submitLabel}
-            </Button>
+            <div className={styles.submitBar}>
+              <Button
+                type="submit"
+                variant="Primary"
+                layout="Text"
+                className={styles.submit}
+                loading={submitting}
+                disabled={submitting}
+              >
+                {submitLabel}
+              </Button>
+            </div>
           </form>
         </SectionBody>
       </Section>
 
       <Section className={styles.tagsSection}>
-        <SectionHeader className={styles.header} title={create.tagsTitle} />
         <SectionBody className={cn(styles.body, styles.tagsBody)}>
-          <Input
-            id="article-new-tag"
-            name="newTag"
-            showLabel={false}
-            placeholder={create.newTagPlaceholder}
-            value={newTag}
-            disabled={submitting}
-            onChange={(event) => setNewTag(event.target.value)}
-            onKeyDown={handleNewTagKeyDown}
-          />
+          <p className={styles.tagsTitle}>{create.tagsTitle}</p>
+          <div className={styles.tagsControls}>
+            <Input
+              id="article-new-tag"
+              name="newTag"
+              showLabel={false}
+              placeholder={create.newTagPlaceholder}
+              value={newTag}
+              disabled={submitting}
+              onChange={(event) => setNewTag(event.target.value)}
+              onKeyDown={handleNewTagKeyDown}
+            />
 
-          <div
-            className={styles.tagList}
-            role="group"
-            aria-label={create.tagsTitle}
-          >
-            {tags.length === 0 ? (
-              <p className={styles.tagEmpty}>—</p>
-            ) : (
-              tags.map((tag) => (
-                <Checkbox
-                  key={tag.name}
-                  value={tag.checked ? "On" : "Off"}
-                  label={tag.name}
-                  disabled={submitting}
-                  onValueChange={(next) => {
-                    setTags((current) =>
-                      sortTags(
-                        current.map((item) =>
-                          item.name === tag.name
-                            ? { ...item, checked: next === "On" }
-                            : item
+            <div
+              className={styles.tagList}
+              role="group"
+              aria-label={create.tagsTitle}
+            >
+              {tags.length === 0 ? (
+                <p className={styles.tagEmpty}>—</p>
+              ) : (
+                tags.map((tag) => (
+                  <Checkbox
+                    key={tag.name}
+                    value={tag.checked ? "On" : "Off"}
+                    label={tag.name}
+                    disabled={submitting}
+                    onValueChange={(next) => {
+                      setTags((current) =>
+                        sortTags(
+                          current.map((item) =>
+                            item.name === tag.name
+                              ? { ...item, checked: next === "On" }
+                              : item
+                          )
                         )
-                      )
-                    );
-                  }}
-                />
-              ))
-            )}
+                      );
+                    }}
+                  />
+                ))
+              )}
+            </div>
           </div>
         </SectionBody>
       </Section>

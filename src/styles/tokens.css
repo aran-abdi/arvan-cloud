@@ -329,6 +329,7 @@
   --articles-col-index-width: 72px;
   --articles-col-actions-width: 64px;
   --articles-card-gap: var(--space-12);
+  --articles-card-gap-tablet: var(--space-8);
   --articles-card-gap-mobile: var(--space-8);
   --articles-card-padding: var(--space-16);
   --articles-card-padding-mobile: var(--space-12);
@@ -341,11 +342,13 @@
   --articles-card-meta-gap: var(--space-8);
   --articles-form-layout-gap: var(--space-24);
   --articles-form-fields-gap: var(--space-12);
-  --articles-form-tags-width: 280px;
+  --articles-form-tags-width: 376px;
   --articles-form-tags-list-max-height: 360px;
   --articles-form-tags-list-padding: var(--space-16);
   --articles-form-tags-list-gap: var(--space-8);
   --articles-form-tags-list-radius: var(--radius-input);
+  --articles-form-submit-bar-padding: var(--space-12);
+  --articles-form-submit-bar-z: var(--z-header);
   --articles-delete-status-gap: var(--space-16);
 
   /* Docs site */
