@@ -1,0 +1,20 @@
+{
+  "title": "Sign up",
+  "usernameLabel": "Username",
+  "usernamePlaceholder": "johndoe",
+  "emailLabel": "Email",
+  "emailPlaceholder": "you@example.com",
+  "passwordLabel": "Password",
+  "passwordPlaceholder": "Create a password",
+  "submit": "Sign up",
+  "hasAccount": "Have an account?",
+  "signIn": "Sign in",
+  "errors": {
+    "signUpFailedTitle": "Sign-up Failed!",
+    "genericDescription": "Something went wrong. Please try again."
+  },
+  "success": {
+    "title": "Account created!",
+    "description": "Please sign in to continue."
+  }
+}

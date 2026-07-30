@@ -1,0 +1,115 @@
+.page {
+  display: flex;
+  flex: 1;
+  align-items: stretch;
+  justify-content: center;
+  min-height: 100%;
+  padding: 0;
+  box-sizing: border-box;
+  background: var(--login-page-bg);
+}
+
+.card {
+  width: 100%;
+  max-width: none;
+  background: var(--login-card-bg);
+  border: none;
+  border-radius: 0;
+  box-shadow: var(--login-card-shadow);
+  overflow: hidden;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  padding: var(--login-header-padding-y) var(--login-header-padding-x);
+  border-bottom: var(--login-header-border-width) solid var(--login-header-border);
+}
+
+.title {
+  margin: 0;
+  color: var(--neutral-fg1-default);
+  font-size: var(--login-title-font-size);
+  font-weight: var(--login-title-font-weight);
+  line-height: var(--login-title-line-height);
+  letter-spacing: var(--login-title-letter-spacing);
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  padding: var(--login-body-padding);
+}
+
+.fields {
+  display: flex;
+  flex-direction: column;
+  gap: var(--login-fields-gap);
+  margin-block-end: var(--login-fields-to-submit-gap);
+}
+
+.submit {
+  width: 100%;
+  margin-block-end: var(--login-submit-to-footer-gap);
+}
+
+.footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: var(--login-footer-gap);
+  margin: 0;
+  color: var(--neutral-fg2-default);
+  font-size: var(--login-footer-font-size);
+  font-weight: var(--login-footer-font-weight);
+  line-height: var(--login-footer-line-height);
+  letter-spacing: var(--login-footer-letter-spacing);
+  text-align: center;
+}
+
+.footerLink {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  outline: none;
+  cursor: pointer;
+  text-decoration: none;
+  font-family: var(--font-ui);
+  font-size: var(--login-footer-font-size);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--login-footer-line-height);
+  letter-spacing: var(--login-footer-letter-spacing);
+  color: var(--pt-info-t2-fg1-default);
+  transition: color var(--motion-duration-fast) var(--motion-easing-standard);
+}
+
+.footerLink:hover {
+  color: var(--pt-info-t2-fg1-hover);
+}
+
+.footerLink:active {
+  color: var(--pt-info-t2-fg1-press);
+}
+
+@media (min-width: 768px) {
+  .page {
+    align-items: center;
+    padding: 24px;
+  }
+
+  .card {
+    max-width: var(--login-card-width);
+    border-radius: var(--login-card-radius);
+  }
+}
+
+@media (min-width: 1024px) {
+  .page {
+    padding: 40px;
+  }
+}

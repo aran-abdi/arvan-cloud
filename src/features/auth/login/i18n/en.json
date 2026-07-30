@@ -1,0 +1,15 @@
+{
+  "title": "Sign in",
+  "emailLabel": "Email",
+  "emailPlaceholder": "you@example.com",
+  "passwordLabel": "Password",
+  "passwordPlaceholder": "Enter your password",
+  "submit": "Sign in",
+  "noAccount": "Don't have an account?",
+  "signUp": "Sign up now",
+  "errors": {
+    "signInFailedTitle": "Sign-in Failed!",
+    "invalidCredentials": "Username and/or Password is invalid",
+    "genericDescription": "Something went wrong. Please try again."
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "title": "ورود",
+  "emailLabel": "ایمیل",
+  "emailPlaceholder": "you@example.com",
+  "passwordLabel": "رمز عبور",
+  "passwordPlaceholder": "رمز عبور خود را وارد کنید",
+  "submit": "ورود",
+  "noAccount": "حساب کاربری ندارید؟",
+  "signUp": "همین حالا ثبت‌نام کنید",
+  "errors": {
+    "signInFailedTitle": "ورود ناموفق!",
+    "invalidCredentials": "نام کاربری و/یا رمز عبور نامعتبر است",
+    "genericDescription": "مشکلی پیش آمد. لطفاً دوباره تلاش کنید."
+  }
+}

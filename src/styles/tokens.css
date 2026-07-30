@@ -112,6 +112,11 @@
   --toast-description-line-height: 16px;
   --toast-description-font-weight: var(--font-weight-regular);
   --toast-description-letter-spacing: var(--type-letter-spacing-tight);
+  --toast-offset-top-mobile: 16px;
+  --toast-offset-top-tablet: 40px;
+  --toast-offset-top-desktop: 56px;
+  --toast-offset-x-mobile: 16px;
+  --toast-max-width: 560px;
 
   /* Pagination */
   --pagination-width: 360px;
@@ -216,4 +221,32 @@
   --table-actions-menu-radius: 12px;
   --table-actions-menu-edge: 8px;
   --table-actions-menu-shadow: 0px 4px 16px rgba(0, 0, 0, 0.16);
+
+  /* Login */
+  --login-page-bg: #f0f0f0;
+  --login-card-width: 480px;
+  --login-card-radius: 8px;
+  --login-card-shadow: none;
+  --login-card-bg: #ffffff;
+  --login-header-padding-x: 24px;
+  --login-header-padding-y: 38px;
+  --login-header-border-width: 1px;
+  --login-header-border: var(--neutral-st3-default);
+  --login-body-padding: 24px;
+  --login-fields-gap: 12px;
+  --login-fields-to-submit-gap: 24px;
+  --login-submit-to-footer-gap: 12px;
+  --login-footer-gap: 4px;
+  --login-title-font-size: 18px;
+  --login-title-line-height: 24px;
+  --login-title-font-weight: var(--font-weight-semibold);
+  --login-title-letter-spacing: var(--type-letter-spacing-tight);
+  --login-footer-font-size: 14px;
+  --login-footer-line-height: 20px;
+  --login-footer-font-weight: var(--font-weight-regular);
+  --login-footer-letter-spacing: var(--type-letter-spacing-tight);
+
+  /* Breakpoints (reference; media queries use literal values) */
+  --bp-tablet: 768px;
+  --bp-desktop: 1024px;
 }

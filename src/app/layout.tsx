@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import { ToastProvider } from "@/components";
 import { yekanBakh } from "@/styles/fonts";
 import "./globals.css";
 
@@ -23,7 +24,9 @@ export default function RootLayout({
       lang="en"
       className={`${inter.variable} ${yekanBakh.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col font-sans">{children}</body>
+      <body className="min-h-full flex flex-col font-sans">
+        <ToastProvider>{children}</ToastProvider>
+      </body>
     </html>
   );
 }

@@ -1,0 +1,20 @@
+{
+  "title": "ثبت‌نام",
+  "usernameLabel": "نام کاربری",
+  "usernamePlaceholder": "نام کاربری خود را وارد کنید",
+  "emailLabel": "ایمیل",
+  "emailPlaceholder": "you@example.com",
+  "passwordLabel": "رمز عبور",
+  "passwordPlaceholder": "رمز عبور خود را انتخاب کنید",
+  "submit": "ثبت‌نام",
+  "hasAccount": "حساب کاربری دارید؟",
+  "signIn": "ورود",
+  "errors": {
+    "signUpFailedTitle": "ثبت‌نام ناموفق!",
+    "genericDescription": "مشکلی پیش آمد. لطفاً دوباره تلاش کنید."
+  },
+  "success": {
+    "title": "حساب ساخته شد!",
+    "description": "برای ادامه وارد شوید."
+  }
+}
