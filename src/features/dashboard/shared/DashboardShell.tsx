@@ -8,12 +8,14 @@ import {
   DashboardSidebar,
   type DashboardNavItem,
 } from "./DashboardSidebar";
+import type enDashboard from "./i18n/en.json";
 import styles from "./DashboardShell.module.css";
 
 export type DashboardShellProps = {
   userName: string;
   welcomeLabel: string;
   logoutLabel: string;
+  logoutConfirm: (typeof enDashboard)["logoutConfirm"];
   brandLabel: string;
   navItems: DashboardNavItem[];
   navAriaLabel: string;
@@ -26,6 +28,7 @@ export function DashboardShell({
   userName,
   welcomeLabel,
   logoutLabel,
+  logoutConfirm,
   brandLabel,
   navItems,
   navAriaLabel,
@@ -80,6 +83,7 @@ export function DashboardShell({
         userName={userName}
         welcomeLabel={welcomeLabel}
         logoutLabel={logoutLabel}
+        logoutConfirm={logoutConfirm}
         brandLabel={brandLabel}
         navOpen={navOpen}
         openNavLabel={openNavLabel}

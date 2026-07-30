@@ -1,6 +1,12 @@
 {
   "welcome": "خوش آمدید",
   "logout": "خروج",
+  "logoutConfirm": {
+    "title": "خروج؟",
+    "message": "آیا مطمئن هستید که می‌خواهید از حساب خود خارج شوید؟",
+    "confirm": "خروج",
+    "cancel": "انصراف"
+  },
   "brand": "Arvancloud Challenge",
   "navAriaLabel": "داشبورد",
   "openNav": "باز کردن منو",

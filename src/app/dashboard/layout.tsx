@@ -50,6 +50,7 @@ export default async function DashboardLayout({
       userName={userName}
       welcomeLabel={messages.welcome}
       logoutLabel={messages.logout}
+      logoutConfirm={messages.logoutConfirm}
       brandLabel={messages.brand}
       navItems={navItems}
       navAriaLabel={messages.navAriaLabel}

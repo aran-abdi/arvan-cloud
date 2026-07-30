@@ -7,6 +7,10 @@
   "submit": "ورود",
   "noAccount": "حساب کاربری ندارید؟",
   "signUp": "همین حالا ثبت‌نام کنید",
+  "loggedOut": {
+    "title": "خروج انجام شد",
+    "description": "با موفقیت از حساب خود خارج شدید."
+  },
   "errors": {
     "signInFailedTitle": "ورود ناموفق!",
     "invalidCredentials": "نام کاربری و/یا رمز عبور نامعتبر است",

@@ -5,5 +5,5 @@ import { redirect } from "next/navigation";
 
 export async function logoutAction(): Promise<void> {
   await destroySession();
-  redirect("/login");
+  redirect("/login?notice=loggedOut");
 }

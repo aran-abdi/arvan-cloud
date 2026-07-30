@@ -1,6 +1,7 @@
 "use client";
 
 import { useRouter, useSearchParams } from "next/navigation";
+import { useEffect } from "react";
 import { useToast } from "@/components";
 import { loginAction } from "@/features/auth/actions";
 import { LoginForm } from "./LoginForm";
@@ -22,6 +23,17 @@ export function LoginScreen({ messages }: LoginScreenProps) {
   const router = useRouter();
   const searchParams = useSearchParams();
   const { showToast } = useToast();
+
+  useEffect(() => {
+    if (searchParams.get("notice") !== "loggedOut") return;
+
+    showToast({
+      type: "Success",
+      title: messages.login.loggedOut.title,
+      description: messages.login.loggedOut.description,
+    });
+    router.replace("/login");
+  }, [messages.login.loggedOut, router, searchParams, showToast]);
 
   const handleSubmit = async (values: LoginFormValues) => {
     const result = await loginAction(values);

@@ -1,6 +1,12 @@
 {
   "welcome": "Welcome",
   "logout": "Log out",
+  "logoutConfirm": {
+    "title": "Log out?",
+    "message": "Are you sure you want to log out of your account?",
+    "confirm": "Log out",
+    "cancel": "Cancel"
+  },
   "brand": "Arvancloud Challenge",
   "navAriaLabel": "Dashboard",
   "openNav": "Open navigation",

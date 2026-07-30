@@ -14,6 +14,10 @@ const messages: LoginMessages = {
     submit: "Sign in",
     noAccount: "Don't have an account?",
     signUp: "Sign up now",
+    loggedOut: {
+      title: "Logged out",
+      description: "You have been signed out successfully.",
+    },
     errors: {
       signInFailedTitle: "Sign-in Failed!",
       invalidCredentials: "Username and/or Password is invalid",

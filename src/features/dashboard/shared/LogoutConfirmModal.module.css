@@ -1,0 +1,27 @@
+.title {
+  margin: 0;
+  font-family: var(--font-ui);
+  font-size: var(--login-title-font-size);
+  font-weight: var(--login-title-font-weight);
+  line-height: var(--login-title-line-height);
+  letter-spacing: var(--login-title-letter-spacing);
+  color: var(--neutral-fg1-default);
+}
+
+.status {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--articles-delete-status-gap);
+  text-align: center;
+}
+
+.message {
+  margin: 0;
+  font-family: var(--font-ui);
+  font-size: var(--type-input-font-size);
+  font-weight: var(--type-input-font-weight);
+  line-height: var(--type-input-line-height);
+  letter-spacing: var(--type-input-letter-spacing);
+  color: var(--neutral-fg1-default);
+}

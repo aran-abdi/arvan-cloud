@@ -6,6 +6,7 @@ import { LoginScreen } from "./LoginScreen";
 
 const push = vi.fn();
 const refresh = vi.fn();
+const replace = vi.fn();
 const loginAction = vi.fn();
 const showToast = vi.fn();
 
@@ -13,6 +14,7 @@ vi.mock("next/navigation", () => ({
   useRouter: () => ({
     push,
     refresh,
+    replace,
   }),
   useSearchParams: () => new URLSearchParams(),
 }));
@@ -44,6 +46,10 @@ const messages: LoginMessages = {
     submit: "Sign in",
     noAccount: "Don't have an account?",
     signUp: "Sign up now",
+    loggedOut: {
+      title: "Logged out",
+      description: "You have been signed out successfully.",
+    },
     errors: {
       signInFailedTitle: "Sign-in Failed!",
       invalidCredentials: "Username and/or Password is invalid",
@@ -59,6 +65,7 @@ describe("LoginScreen", () => {
   beforeEach(() => {
     push.mockReset();
     refresh.mockReset();
+    replace.mockReset();
     loginAction.mockReset();
     showToast.mockReset();
   });
