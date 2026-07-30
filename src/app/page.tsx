@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import arvanMark from "@/assets/brand/arvan-mark.svg";
 import { cn } from "@/lib/cn";
 import styles from "./Home.module.css";
 
@@ -20,7 +21,7 @@ export default function Home() {
         <div className={styles.brand}>
           <div className={styles.mark}>
             <Image
-              src="/brand/icon.png"
+              src={arvanMark}
               alt=""
               width={48}
               height={48}
