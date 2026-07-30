@@ -46,7 +46,7 @@
   font-size: var(--type-input-font-size);
   font-weight: var(--font-weight-semibold);
   line-height: var(--type-input-line-height);
-  color: #ccc;
+  color: var(--neutral-fg1-default);
 }
 
 .fullWidth {
