@@ -53,7 +53,7 @@
   max-height: var(--articles-form-tags-list-max-height);
   overflow: auto;
   padding: var(--articles-form-tags-list-padding);
-  border: var(--input-border-width) solid var(--neutral-st2-default);
+  border: var(--input-border-width) solid var(--neutral-st3-default);
   border-radius: var(--articles-form-tags-list-radius);
   background: var(--neutral-bg1-default);
 }

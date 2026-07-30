@@ -343,7 +343,7 @@
   --articles-form-fields-gap: var(--space-12);
   --articles-form-tags-width: 280px;
   --articles-form-tags-list-max-height: 360px;
-  --articles-form-tags-list-padding: var(--space-12);
+  --articles-form-tags-list-padding: var(--space-16);
   --articles-form-tags-list-gap: var(--space-8);
   --articles-form-tags-list-radius: var(--radius-input);
   --articles-delete-status-gap: var(--space-16);
