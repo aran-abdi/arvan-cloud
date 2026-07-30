@@ -50,7 +50,7 @@ export function DashboardHeader({
             variant="Secondary"
             layout="Icon"
             className={styles.menuButton}
-            icon={<MenuIcon />}
+            icon={<MenuIcon closeBadge={navOpen} />}
             aria-label={navOpen ? closeNavLabel : openNavLabel}
             aria-expanded={navOpen}
             aria-controls={DASHBOARD.navId}
