@@ -62,7 +62,6 @@ export function TableRow({ children, className, ...rowProps }: TableRowProps) {
 
 export type TableHeadProps = HTMLAttributes<HTMLTableCellElement> & {
   children?: ReactNode;
-  /** Center text, or `index` to match TableRowNumber alignment. */
   align?: "start" | "center" | "index";
 };
 
@@ -94,9 +93,7 @@ export function TableHead({
 
 export type TableCellProps = HTMLAttributes<HTMLTableCellElement> & {
   children?: ReactNode;
-  /** Emphasized body text (e.g. title column). */
   strong?: boolean;
-  /** Center content, or `index` for the row-number column. */
   align?: "start" | "center" | "index";
 };
 

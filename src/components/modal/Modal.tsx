@@ -11,7 +11,6 @@ export type ModalProps = {
   size: ModalSize;
   onClose?: () => void;
   children: ReactNode;
-  /** Renders the panel in-flow (no overlay) — for docs / static previews. */
   inline?: boolean;
   className?: string;
   style?: CSSProperties;

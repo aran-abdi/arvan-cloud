@@ -40,12 +40,10 @@ function buildPageTokens(current: number, total: number): PageToken[] {
   if (current + 1 < total) showPage(current + 1);
   showPage(total);
 
-  // Sort numeric pages in ascending order
   const sorted = (pages.filter((p) => typeof p === "number") as number[]).sort(
     (a, b) => a - b
   );
 
-  // Insert ellipsis where gaps of ≥ 2 exist
   const tokens: PageToken[] = [];
   for (let i = 0; i < sorted.length; i++) {
     tokens.push(sorted[i]);
@@ -90,7 +88,7 @@ export function Pagination({
       {/* Prev chevron */}
       <button
         type="button"
-        className={styles.chevron}
+        className={cn(styles.item, styles.chevron)}
         disabled={isPrevDisabled}
         aria-label="Previous page"
         onClick={() => !isPrevDisabled && onPageChange(currentPage - 1)}
@@ -136,7 +134,7 @@ export function Pagination({
       {/* Next chevron */}
       <button
         type="button"
-        className={styles.chevron}
+        className={cn(styles.item, styles.chevron)}
         disabled={isNextDisabled}
         aria-label="Next page"
         onClick={() => !isNextDisabled && onPageChange(currentPage + 1)}

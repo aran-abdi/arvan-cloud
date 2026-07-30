@@ -1,0 +1,57 @@
+"use server";
+
+import { DummyJsonApiError, updateDummyJsonPost } from "@/lib/api/dummyjson";
+import { getArticlesMessages } from "../i18n/getArticlesMessages";
+import { defaultLocale } from "@/i18n";
+import type { CreateArticleFormValues } from "../types";
+
+export type UpdateArticleResult =
+  | { ok: true; title: string; description: string }
+  | { ok: false; title: string; description: string };
+
+function buildPostBody(values: CreateArticleFormValues): string {
+  const description = values.description.trim();
+  const body = values.body.trim();
+
+  if (description && body) {
+    return `${description}\n\n${body}`;
+  }
+
+  return description || body;
+}
+
+export async function updateArticleAction(
+  id: number,
+  values: CreateArticleFormValues
+): Promise<UpdateArticleResult> {
+  const messages = await getArticlesMessages(defaultLocale);
+  const { edit } = messages;
+
+  try {
+    await updateDummyJsonPost(id, {
+      title: values.title.trim(),
+      body: buildPostBody(values),
+      tags: values.tags,
+    });
+
+    return {
+      ok: true,
+      title: edit.success.title,
+      description: edit.success.description,
+    };
+  } catch (error) {
+    if (error instanceof DummyJsonApiError) {
+      return {
+        ok: false,
+        title: edit.errors.updateFailedTitle,
+        description: error.message || edit.errors.updateFailedDescription,
+      };
+    }
+
+    return {
+      ok: false,
+      title: edit.errors.updateFailedTitle,
+      description: edit.errors.updateFailedDescription,
+    };
+  }
+}

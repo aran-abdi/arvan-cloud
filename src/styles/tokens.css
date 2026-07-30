@@ -55,6 +55,8 @@
 
   /* Z-index layers */
   --z-sidebar: 30;
+  --z-sidebar-backdrop: 34;
+  --z-sidebar-overlay: 35;
   --z-header: 40;
   --z-modal: 50;
   --z-popover: 60;
@@ -119,7 +121,6 @@
   --toast-max-width: 560px;
 
   /* Pagination */
-  --pagination-width: 360px;
   --pagination-radius: 8px;
   --pagination-border-width: 1px;
   --pagination-padding: 4px;
@@ -249,4 +250,9 @@
   /* Breakpoints (reference; media queries use literal values) */
   --bp-tablet: 768px;
   --bp-desktop: 1024px;
+
+  /* Dashboard */
+  --dashboard-page-bg: #f0f0f0;
+  --dashboard-content-padding: 24px;
+  --dashboard-content-gap: 24px;
 }

@@ -21,7 +21,9 @@ export async function loginWithDummyJson(
   });
 }
 
-export async function getCurrentDummyJsonUser(accessToken: string) {
+export async function getCurrentDummyJsonUser(
+  accessToken: string
+): Promise<Omit<DummyJsonAuthUser, "accessToken" | "refreshToken">> {
   return dummyJsonFetch("/auth/me", {
     method: "GET",
     accessToken,

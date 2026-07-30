@@ -27,6 +27,26 @@ export type DummyJsonUsersResponse = {
   limit: number;
 };
 
+export type DummyJsonPost = {
+  id: number;
+  title: string;
+  body: string;
+  tags: string[];
+  userId: number;
+  views?: number;
+  reactions?: {
+    likes: number;
+    dislikes: number;
+  };
+};
+
+export type DummyJsonPostsResponse = {
+  posts: DummyJsonPost[];
+  total: number;
+  skip: number;
+  limit: number;
+};
+
 export type DummyJsonErrorBody = {
   message?: string;
 };

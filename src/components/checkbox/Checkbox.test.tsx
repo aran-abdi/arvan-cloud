@@ -105,5 +105,35 @@ describe("Checkbox", () => {
 
     expect(screen.getByText("Accept terms")).toBeInTheDocument();
     expect(screen.getByRole("checkbox")).toBeInTheDocument();
+    expect(screen.getByText("Accept terms").closest("label")).toHaveAttribute(
+      "for",
+      screen.getByRole("checkbox").id
+    );
+  });
+
+  it("toggles once when clicking the control with a label", async () => {
+    const user = userEvent.setup();
+    const onValueChange = vi.fn();
+
+    render(
+      <Checkbox value="Off" label="Tag" onValueChange={onValueChange} />
+    );
+
+    await user.click(screen.getByRole("checkbox"));
+    expect(onValueChange).toHaveBeenCalledTimes(1);
+    expect(onValueChange).toHaveBeenCalledWith("On");
+  });
+
+  it("toggles once when clicking the label text", async () => {
+    const user = userEvent.setup();
+    const onValueChange = vi.fn();
+
+    render(
+      <Checkbox value="Off" label="Tag" onValueChange={onValueChange} />
+    );
+
+    await user.click(screen.getByText("Tag"));
+    expect(onValueChange).toHaveBeenCalledTimes(1);
+    expect(onValueChange).toHaveBeenCalledWith("On");
   });
 });

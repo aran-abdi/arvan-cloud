@@ -2,7 +2,7 @@ export const CHECKBOX = {
   size: 16,
   radius: 4,
   paddingOn: 2,
-  /** Off has no inner content; padding must stay 0 so the 16×16 box + 2px border fit. */
+  // Off has no inner content; keep 0 so 16×16 + 2px border fits.
   paddingOff: 0,
   borderWidth: 2,
   labelGap: 4,

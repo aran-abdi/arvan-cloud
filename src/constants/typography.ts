@@ -1,4 +1,3 @@
-/** Letter-spacing -2% → -0.02em */
 export const LETTER_SPACING = {
   tight2: "-0.02em",
 } as const;

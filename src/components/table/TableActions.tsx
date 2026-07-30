@@ -26,11 +26,8 @@ export type TableActionsProps = Omit<
   "children"
 > & {
   children: ReactNode;
-  /** Accessible label for the actions trigger. */
   label?: string;
-  /** Controlled open state. */
   open?: boolean;
-  /** Default open for uncontrolled usage. */
   defaultOpen?: boolean;
   onOpenChange?: (open: boolean) => void;
 };
@@ -84,7 +81,6 @@ export function TableActions({
     const gap = TABLE.actionsMenuGap;
     const edge = TABLE.actionsMenuEdge;
 
-    // Prefer staying inside the table scroll area; fall back to the viewport.
     const tableArea =
       trigger.closest("table")?.parentElement?.getBoundingClientRect() ??
       ({

@@ -220,10 +220,9 @@ export const TOKEN_NAV: readonly TokenCategory[] = [
   {
     slug: "pagination",
     title: "Pagination",
-    description: "Panel size, item size, and ellipsis icon metrics.",
+    description: "Panel metrics, item size, and ellipsis icon metrics. Width is content-driven.",
     group: "Components",
     tokens: [
-      { name: "--pagination-width", value: "360px", description: "Fixed panel width.", kind: "size" },
       { name: "--pagination-radius", value: "8px", description: "Panel radius.", kind: "size" },
       { name: "--pagination-border-width", value: "1px", description: "Panel border width.", kind: "size" },
       { name: "--pagination-padding", value: "4px", description: "Panel padding.", kind: "size" },

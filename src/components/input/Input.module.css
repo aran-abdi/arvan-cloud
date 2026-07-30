@@ -48,17 +48,9 @@
   color: var(--neutral-fg1-hover);
 }
 
-.input:hover:not(:disabled):not(:read-only):not(:focus)::placeholder {
-  color: var(--neutral-fg1-hover);
-}
-
 /* state=active (focus) */
 .input:focus:not(:disabled):not(:read-only) {
   border-color: var(--primary-fg1-default);
-  color: var(--neutral-fg1-default);
-}
-
-.input:focus:not(:disabled):not(:read-only)::placeholder {
   color: var(--neutral-fg1-default);
 }
 
@@ -78,6 +70,11 @@
 
 .input:disabled::placeholder {
   color: var(--neutral-fg1-disable);
+}
+
+.textarea {
+  height: auto;
+  min-height: 120px;
 }
 
 /* error */

@@ -1,0 +1,272 @@
+.section {
+  width: 100%;
+  max-width: 100%;
+}
+
+.header {
+  padding: 38px 24px;
+}
+
+.body {
+  min-height: 0;
+  padding: 24px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.tableView {
+  width: 100%;
+  min-width: 0;
+}
+
+.table {
+  table-layout: fixed;
+  width: 100%;
+  min-width: 760px;
+}
+
+.table .colIndex {
+  width: 72px;
+  box-sizing: border-box;
+}
+
+.table .colTitle {
+  width: 18%;
+}
+
+.table .colAuthor {
+  width: 12%;
+}
+
+.table .colTags {
+  width: 16%;
+}
+
+.table .colExcerpt {
+  width: 28%;
+}
+
+.table .colCreated {
+  width: 12%;
+}
+
+.table .colActions {
+  width: 64px;
+  box-sizing: border-box;
+}
+
+.cellClamp {
+  overflow: hidden;
+}
+
+.truncate {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.cardList {
+  display: none;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 16px;
+  background: var(--neutral-bg1-default);
+  border: 1px solid var(--neutral-st3-default);
+  border-radius: 8px;
+}
+
+.cardTop {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  min-width: 0;
+}
+
+.cardIndex {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 28px;
+  height: 28px;
+  padding: 0 6px;
+  border-radius: 6px;
+  background: var(--neutral-bg1-hover);
+  font-family: var(--font-ui);
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 16px;
+  color: var(--neutral-fg2-default);
+}
+
+.cardTitle {
+  flex: 1 1 auto;
+  min-width: 0;
+  margin: 0;
+  font-family: var(--font-ui);
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+  color: var(--neutral-fg1-default);
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.cardActions {
+  flex: 0 0 auto;
+}
+
+.cardMeta {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.cardMetaRow {
+  display: grid;
+  grid-template-columns: 72px minmax(0, 1fr);
+  gap: 8px;
+  align-items: start;
+}
+
+.cardMetaLabel {
+  font-family: var(--font-ui);
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 16px;
+  color: var(--neutral-fg2-default);
+}
+
+.cardMetaValue {
+  font-family: var(--font-ui);
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 18px;
+  color: var(--neutral-fg1-default);
+  overflow-wrap: anywhere;
+}
+
+.cardExcerpt {
+  margin: 0;
+  font-family: var(--font-ui);
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 18px;
+  color: var(--neutral-fg2-default);
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}
+
+.empty {
+  margin: 0;
+  font-family: var(--font-ui);
+  font-size: 14px;
+  line-height: 20px;
+  color: var(--neutral-fg2-default);
+}
+
+.pagination {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+}
+
+.pagination > * {
+  flex: 0 0 auto;
+  width: max-content;
+  max-width: 100%;
+}
+
+@media (max-width: 1023px) {
+  .section {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+    width: 100%;
+    max-width: 100%;
+    min-height: calc(100vh - var(--header-height));
+    min-height: calc(100dvh - var(--header-height));
+    border-radius: 0;
+  }
+
+  .header {
+    padding: 20px 12px;
+  }
+
+  .body {
+    flex: 1 1 auto;
+    min-height: 0;
+    padding: 12px;
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    flex: 1 1 auto;
+    min-height: 100%;
+  }
+
+  .pagination {
+    margin-block-start: auto;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  .empty {
+    padding: 0;
+  }
+}
+
+@media (max-width: 767px) {
+  .header {
+    padding: 16px 12px;
+  }
+
+  .body {
+    padding: 12px;
+  }
+
+  .tableView {
+    display: none;
+  }
+
+  .cardList {
+    display: flex;
+    gap: 8px;
+  }
+
+  .card {
+    border-radius: 8px;
+    border: 1px solid var(--neutral-st3-default);
+    padding: 12px;
+  }
+
+  .card:last-child {
+    border-bottom-width: 1px;
+  }
+
+  .pagination {
+    overflow-x: auto;
+  }
+}

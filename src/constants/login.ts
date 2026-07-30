@@ -1,4 +1,3 @@
-/** Layout tokens for the login auth card. */
 export const LOGIN = {
   pageBg: "#F0F0F0",
   cardBg: "#FFFFFF",
@@ -14,7 +13,6 @@ export const LOGIN = {
   footerGap: 4,
 } as const;
 
-/** Shared layout breakpoints (px). Keep in sync with CSS media queries. */
 export const BREAKPOINT = {
   tablet: 768,
   desktop: 1024,

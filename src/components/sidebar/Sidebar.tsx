@@ -4,7 +4,6 @@ import styles from "./Sidebar.module.css";
 
 export type SidebarProps = HTMLAttributes<HTMLElement> & {
   children: ReactNode;
-  /** Pin below the header for the viewport height. @default true */
   fixed?: boolean;
 };
 

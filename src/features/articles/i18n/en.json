@@ -1,0 +1,69 @@
+{
+  "title": "All Posts",
+  "columns": {
+    "index": "#",
+    "title": "Title",
+    "author": "Author",
+    "tags": "Tags",
+    "excerpt": "Excerpt",
+    "created": "Created",
+    "actions": "Actions"
+  },
+  "actions": {
+    "edit": "Edit",
+    "delete": "Delete",
+    "menuLabel": "Row actions"
+  },
+  "delete": {
+    "modalTitle": "Delete Article",
+    "modalMessage": "Are you sure you want to delete this article?",
+    "confirm": "Delete",
+    "cancel": "Cancel"
+  },
+  "empty": "No posts found.",
+  "errors": {
+    "loadFailedTitle": "Failed to load posts",
+    "loadFailedDescription": "Something went wrong. Please try again.",
+    "deleteFailedTitle": "Delete Failed!",
+    "deleteFailedDescription": "Could not delete this post. Please try again."
+  },
+  "success": {
+    "deleteTitle": "Article deleted successfully"
+  },
+  "create": {
+    "title": "New article",
+    "titleLabel": "Title",
+    "titlePlaceholder": "Title",
+    "descriptionLabel": "Description",
+    "descriptionPlaceholder": "Description",
+    "bodyLabel": "Body",
+    "tagsTitle": "Tags",
+    "newTagPlaceholder": "New tag",
+    "submit": "Submit",
+    "required": "Required field",
+    "errors": {
+      "createFailedTitle": "Create Failed!",
+      "createFailedDescription": "Could not create this article. Please try again.",
+      "tagsLoadFailedTitle": "Failed to load tags",
+      "tagsLoadFailedDescription": "Something went wrong. Please try again."
+    },
+    "success": {
+      "title": "Article created!",
+      "description": "Your article was submitted successfully."
+    }
+  },
+  "edit": {
+    "title": "Edit article",
+    "submit": "Submit",
+    "errors": {
+      "updateFailedTitle": "Update Failed!",
+      "updateFailedDescription": "Could not update this article. Please try again.",
+      "loadFailedTitle": "Failed to load article",
+      "loadFailedDescription": "Something went wrong. Please try again."
+    },
+    "success": {
+      "title": "Well done!",
+      "description": "Article updated successfully"
+    }
+  }
+}

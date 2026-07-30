@@ -1,14 +1,18 @@
 import type { Metadata } from "next";
+import { ArticlesView, getArticlesMessages } from "@/features/articles";
 import { defaultLocale, getDictionary } from "@/i18n";
 
 export async function generateMetadata(): Promise<Metadata> {
-  const dictionary = await getDictionary(defaultLocale);
+  const [messages, dictionary] = await Promise.all([
+    getArticlesMessages(defaultLocale),
+    getDictionary(defaultLocale),
+  ]);
 
   return {
-    title: `Articles · ${dictionary.common.appName}`,
+    title: `${messages.title} · ${dictionary.common.appName}`,
   };
 }
 
 export default function ArticlesPage() {
-  return <main />;
+  return <ArticlesView page={1} />;
 }

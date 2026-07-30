@@ -1,36 +1,60 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Arvan
 
-## Getting Started
+Next.js dashboard app with a shared design system, feature-based architecture, and DummyJSON as the API.
 
-First, run the development server:
+## Getting started
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+| Path | What |
+|------|------|
+| `/login` | Sign in |
+| `/dashboard/articles` | Articles (requires auth) |
+| `/docs` | Developer docs, component playground, tokens |
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Scripts
 
-## Learn More
+```bash
+npm run dev        # development server
+npm run build      # production build
+npm start          # serve production build
+npm run lint       # ESLint
+npm test           # Vitest (watch)
+npm run test:run   # Vitest (CI)
+```
 
-To learn more about Next.js, take a look at the following resources:
+## Documentation
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Full contributor guides live in the in-app docs:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+**[http://localhost:3000/docs/guides/getting-started](http://localhost:3000/docs/guides/getting-started)**
 
-## Deploy on Vercel
+Topics covered:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- Getting started & environment
+- Project structure
+- Architecture (features, actions, API)
+- Auth & sessions
+- Design system
+- Internationalization
+- Testing
+- Conventions
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Component APIs and design tokens are under `/docs/components` and `/docs/tokens`.
+
+## Stack
+
+- Next.js 16 (App Router) + React 19
+- TypeScript
+- CSS Modules + design tokens (`src/styles/tokens.css`)
+- Vitest + Testing Library
+- DummyJSON for auth and posts
+
+## Note for agents / Next.js 16
+
+This version has breaking changes versus older Next.js. Prefer the guides under `node_modules/next/dist/docs/` before changing routing or request interception. Auth guards use `src/proxy.ts`.

@@ -8,3 +8,4 @@ export { ChevronLeftDisabledIcon } from "./ChevronLeftDisabledIcon";
 export { ChevronRightDefaultIcon } from "./ChevronRightDefaultIcon";
 export { ChevronRightDisabledIcon } from "./ChevronRightDisabledIcon";
 export { DotsIcon } from "./DotsIcon";
+export { MenuIcon } from "./MenuIcon";

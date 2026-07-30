@@ -1,4 +1,3 @@
-/** Spacing scale in px — single source for gaps and padding. */
 export const SPACE = {
   4: 4,
   8: 8,
@@ -17,7 +16,6 @@ export const SPACE_PX = {
   24: `${SPACE[24]}px`,
 } as const;
 
-/** Semantic spacing for form fields. */
 export const FIELD_SPACE = {
   labelGap: SPACE[8],
   messageGap: SPACE[8],
@@ -30,7 +28,6 @@ export const FIELD_SPACE_PX = {
   inputPaddingX: SPACE_PX[12],
 } as const;
 
-/** CSS custom-property references (defined in tokens.css). */
 export const FIELD_SPACE_VAR = {
   labelGap: "var(--space-field-label-gap)",
   messageGap: "var(--space-field-message-gap)",

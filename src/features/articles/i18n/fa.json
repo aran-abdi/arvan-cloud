@@ -1,0 +1,69 @@
+{
+  "title": "همه پست‌ها",
+  "columns": {
+    "index": "#",
+    "title": "عنوان",
+    "author": "نویسنده",
+    "tags": "برچسب‌ها",
+    "excerpt": "خلاصه",
+    "created": "ایجاد شده",
+    "actions": "اقدامات"
+  },
+  "actions": {
+    "edit": "ویرایش",
+    "delete": "حذف",
+    "menuLabel": "اقدامات ردیف"
+  },
+  "delete": {
+    "modalTitle": "حذف مقاله",
+    "modalMessage": "آیا از حذف این مقاله مطمئن هستید؟",
+    "confirm": "حذف",
+    "cancel": "انصراف"
+  },
+  "empty": "پستی یافت نشد.",
+  "errors": {
+    "loadFailedTitle": "بارگذاری پست‌ها ناموفق بود",
+    "loadFailedDescription": "مشکلی پیش آمد. لطفاً دوباره تلاش کنید.",
+    "deleteFailedTitle": "حذف ناموفق!",
+    "deleteFailedDescription": "حذف این پست ممکن نشد. لطفاً دوباره تلاش کنید."
+  },
+  "success": {
+    "deleteTitle": "مقاله با موفقیت حذف شد"
+  },
+  "create": {
+    "title": "مقاله جدید",
+    "titleLabel": "عنوان",
+    "titlePlaceholder": "عنوان",
+    "descriptionLabel": "توضیحات",
+    "descriptionPlaceholder": "توضیحات",
+    "bodyLabel": "متن",
+    "tagsTitle": "برچسب‌ها",
+    "newTagPlaceholder": "برچسب جدید",
+    "submit": "ثبت",
+    "required": "فیلد الزامی است",
+    "errors": {
+      "createFailedTitle": "ایجاد ناموفق!",
+      "createFailedDescription": "ایجاد این مقاله ممکن نشد. لطفاً دوباره تلاش کنید.",
+      "tagsLoadFailedTitle": "بارگذاری برچسب‌ها ناموفق بود",
+      "tagsLoadFailedDescription": "مشکلی پیش آمد. لطفاً دوباره تلاش کنید."
+    },
+    "success": {
+      "title": "مقاله ایجاد شد!",
+      "description": "مقاله شما با موفقیت ثبت شد."
+    }
+  },
+  "edit": {
+    "title": "ویرایش مقاله",
+    "submit": "ثبت",
+    "errors": {
+      "updateFailedTitle": "به‌روزرسانی ناموفق!",
+      "updateFailedDescription": "به‌روزرسانی این مقاله ممکن نشد. لطفاً دوباره تلاش کنید.",
+      "loadFailedTitle": "بارگذاری مقاله ناموفق بود",
+      "loadFailedDescription": "مشکلی پیش آمد. لطفاً دوباره تلاش کنید."
+    },
+    "success": {
+      "title": "آفرین!",
+      "description": "مقاله با موفقیت به‌روزرسانی شد"
+    }
+  }
+}

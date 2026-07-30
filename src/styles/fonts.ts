@@ -1,6 +1,5 @@
 import localFont from "next/font/local";
 
-/** Yekan Bakh (FaNum) — used for Persian / RTL UI. */
 export const yekanBakh = localFont({
   src: [
     {

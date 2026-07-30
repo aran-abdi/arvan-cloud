@@ -11,7 +11,6 @@ export const TOAST = {
   minWidthErrorPx: 129,
   autoDismissMs: 3000,
   radiusLg: RADIUS[8],
-  /** Distance from viewport top. Keep in sync with ToastViewport CSS. */
   offsetTopMobilePx: 16,
   offsetTopTabletPx: 40,
   offsetTopDesktopPx: 56,

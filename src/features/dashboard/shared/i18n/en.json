@@ -1,0 +1,12 @@
+{
+  "welcome": "Welcome",
+  "logout": "Log out",
+  "brand": "Arvancloud Challenge",
+  "navAriaLabel": "Dashboard",
+  "openNav": "Open navigation",
+  "closeNav": "Close navigation",
+  "nav": {
+    "allArticles": "All Articles",
+    "newArticle": "New Article"
+  }
+}

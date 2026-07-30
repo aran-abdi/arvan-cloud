@@ -1,10 +1,12 @@
 .root {
-  display: inline-flex;
+  display: flex;
   align-items: center;
   justify-content: center;
   gap: var(--pagination-gap);
   box-sizing: border-box;
-  width: var(--pagination-width);
+  width: max-content;
+  max-width: 100%;
+  flex: 0 0 auto;
   background: var(--neutral-bg1-default);
   border: var(--pagination-border-width) solid var(--neutral-st2-default);
   border-radius: var(--pagination-radius);
@@ -12,32 +14,7 @@
   font-family: var(--font-ui);
 }
 
-/* ─── Chevron button ──────────────────────────── */
-.chevron {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: var(--pagination-item-size);
-  height: var(--pagination-item-size);
-  box-sizing: border-box;
-  border: 0;
-  background: transparent;
-  cursor: pointer;
-  padding: 0;
-  border-radius: var(--pagination-item-radius);
-  outline: none;
-}
-
-.chevron:disabled {
-  cursor: not-allowed;
-  pointer-events: none;
-}
-
-:global([dir="rtl"]) .chevron {
-  transform: scaleX(-1);
-}
-
-/* ─── Page item button ───────────────────────── */
+/* ─── Page item / chevron button ─────────────── */
 .item {
   display: inline-flex;
   align-items: center;
@@ -86,6 +63,14 @@
 .item:disabled[data-selected="true"] {
   background: var(--primary-bg2-disable);
   color: var(--neutral-fg3-default);
+}
+
+.chevron {
+  padding: 0;
+}
+
+:global([dir="rtl"]) .chevron {
+  transform: scaleX(-1);
 }
 
 /* ─── Ellipsis ───────────────────────────────── */

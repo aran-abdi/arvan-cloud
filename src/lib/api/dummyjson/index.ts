@@ -7,9 +7,20 @@ export { loginWithDummyJson, getCurrentDummyJsonUser } from "./auth";
 export {
   findDummyJsonUsersByEmail,
   createDummyJsonUser,
+  getDummyJsonUserById,
 } from "./users";
+export {
+  fetchDummyJsonPosts,
+  fetchDummyJsonPost,
+  deleteDummyJsonPost,
+  createDummyJsonPost,
+  updateDummyJsonPost,
+  fetchDummyJsonPostTagList,
+} from "./posts";
 export {
   DummyJsonApiError,
   type DummyJsonAuthUser,
   type DummyJsonUser,
+  type DummyJsonPost,
+  type DummyJsonPostsResponse,
 } from "./types";

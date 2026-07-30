@@ -1,0 +1,12 @@
+{
+  "welcome": "خوش آمدید",
+  "logout": "خروج",
+  "brand": "Arvancloud Challenge",
+  "navAriaLabel": "داشبورد",
+  "openNav": "باز کردن منو",
+  "closeNav": "بستن منو",
+  "nav": {
+    "allArticles": "همه مقالات",
+    "newArticle": "مقاله جدید"
+  }
+}

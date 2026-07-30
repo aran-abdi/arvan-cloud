@@ -1,4 +1,5 @@
 export { Input, type InputProps, type InputSize } from "./input";
+export { Textarea, type TextareaProps } from "./input";
 export { Checkbox, type CheckboxProps } from "./checkbox";
 export { Toast, ToastProvider, useToast, type ToastProps, type ShowToastInput } from "./toast";
 export { Button, type ButtonProps } from "./button";

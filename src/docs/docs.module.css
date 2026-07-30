@@ -253,3 +253,74 @@
   color: var(--neutral-fg1-default);
   word-break: break-all;
 }
+
+.guide {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  max-width: 720px;
+  font-family: var(--font-ui);
+  font-size: 14px;
+  line-height: 22px;
+  color: var(--neutral-fg1-default);
+}
+
+.guide > p,
+.guideSection > p {
+  margin: 0;
+}
+
+.guideSection {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.guideHeading {
+  margin: 0;
+  font-family: var(--font-ui);
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  color: var(--neutral-fg1-default);
+}
+
+.guideList {
+  margin: 0;
+  padding-inline-start: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.guideList li::marker {
+  color: var(--neutral-fg2-default);
+}
+
+.guideCode {
+  margin: 0;
+  padding: 16px 18px;
+  border: 1px solid var(--neutral-st2-default);
+  border-radius: 12px;
+  background: var(--neutral-bg1-default);
+  overflow-x: auto;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 12px;
+  line-height: 18px;
+  color: var(--neutral-fg1-default);
+  box-shadow: 0 1px 3px rgb(0 0 0 / 6%);
+}
+
+.guideCode code {
+  font-family: inherit;
+  white-space: pre;
+}
+
+.guideInlineCode {
+  padding: 1px 6px;
+  border-radius: 6px;
+  background: rgb(0 0 0 / 6%);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 12px;
+  color: var(--primary-fg1-default);
+}

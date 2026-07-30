@@ -1,4 +1,3 @@
-/** Semantic color tokens — values live in CSS; use these names in components. */
 export const COLOR = {
   neutralFg1Default: "var(--neutral-fg1-default)",
   neutralFg1Hover: "var(--neutral-fg1-hover)",

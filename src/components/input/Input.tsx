@@ -14,17 +14,11 @@ export type InputProps = Omit<
   InputHTMLAttributes<HTMLInputElement>,
   "size" | "className"
 > & {
-  /** When provided (and `showLabel` is not false), renders the field label. */
   label?: ReactNode;
-  /** Figma `label` toggle — defaults to true when `label` is set. */
   showLabel?: boolean;
-  /** Shows a `*` after the label when true. */
   required?: boolean;
-  /** Helper / error text below the field (Figma `message`). */
   message?: ReactNode;
-  /** Error state: error border + error-styled message. */
   error?: boolean;
-  /** sm=36 · md=40 · lg=48 */
   size?: InputSize;
   className?: string;
   inputClassName?: string;

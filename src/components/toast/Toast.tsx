@@ -11,10 +11,6 @@ export type ToastProps = {
   type: ToastType;
   title: ReactNode;
   description?: ReactNode;
-  /**
-   * When true: dismiss on user click/touch.
-   * When false: auto-dismiss after TOAST.autoDismissMs.
-   */
   action?: boolean;
   className?: string;
   onDismiss?: () => void;

@@ -14,7 +14,6 @@ export type CheckboxProps = Omit<
   value: CheckboxValue;
   disabled?: boolean;
   onValueChange?: (next: CheckboxValue) => void;
-  /** Optional text shown next to the control (4px gap, vertically centered). */
   label?: ReactNode;
 };
 
@@ -61,9 +60,11 @@ export function Checkbox({
     useCallback(
       (e) => {
         buttonProps.onClick?.(e);
+        if (e.defaultPrevented) return;
         toggle();
       },
-      [buttonProps, toggle]
+      // eslint-disable-next-line react-hooks/exhaustive-deps -- only onClick from buttonProps
+      [buttonProps.onClick, toggle]
     );
 
   const handlePointerDown: NonNullable<
@@ -143,6 +144,7 @@ export function Checkbox({
       data-value={dataValue}
       data-pressed={pressed || undefined}
       className={cn(styles.root, !label && className)}
+      {...buttonProps}
       onClick={handleClick}
       onPointerDown={handlePointerDown}
       onPointerUp={handlePointerUp}
@@ -150,7 +152,6 @@ export function Checkbox({
       onKeyDown={handleKeyDown}
       onKeyUp={handleKeyUp}
       onBlur={handleBlur}
-      {...buttonProps}
     >
       {value === "On" ? <CheckIcon className={styles.icon} /> : null}
       {value === "Indeterminate" ? (
@@ -163,13 +164,16 @@ export function Checkbox({
     return control;
   }
 
+  // Don't wrap the button in <label> — both would fire and toggle twice.
   return (
-    <label
+    <div
       className={cn(styles.field, className)}
       data-disabled={disabled ? "true" : undefined}
     >
       {control}
-      <span className={styles.label}>{label}</span>
-    </label>
+      <label htmlFor={checkboxId} className={styles.label}>
+        {label}
+      </label>
+    </div>
   );
 }

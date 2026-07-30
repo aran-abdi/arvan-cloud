@@ -4,7 +4,6 @@ import styles from "./Header.module.css";
 
 export type HeaderProps = HTMLAttributes<HTMLElement> & {
   children: ReactNode;
-  /** Pin to the top of the viewport. @default true */
   fixed?: boolean;
 };
 

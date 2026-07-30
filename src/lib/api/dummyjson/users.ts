@@ -11,6 +11,10 @@ export async function findDummyJsonUsersByEmail(
   return response.users;
 }
 
+export async function getDummyJsonUserById(id: number): Promise<DummyJsonUser> {
+  return dummyJsonFetch<DummyJsonUser>(`/users/${id}`);
+}
+
 export type CreateDummyJsonUserInput = {
   username: string;
   email: string;

@@ -11,9 +11,7 @@ export type ButtonProps = Omit<
 > & {
   variant: ButtonVariant;
   layout: ButtonLayout;
-  /** Button label — used for `layout="Text"`. Also used for accessible aria-label when `layout="Icon"`. */
   children?: ReactNode;
-  /** Icon to render inside `layout="Icon"`. Ignored when `loading=true` (spinner is shown instead). */
   icon?: ReactNode;
   loading?: boolean;
 };
