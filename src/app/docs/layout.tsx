@@ -11,7 +11,7 @@ export default function DocsLayout({
     <div className={styles.shell}>
       <Header>
         <span>Welcome to Arvan UI</span>
-        <span className={styles.centerLabel}>Component Docs</span>
+        <span className={styles.centerLabel}>Arvan UI Docs</span>
         <span />
       </Header>
       <div className={styles.body}>

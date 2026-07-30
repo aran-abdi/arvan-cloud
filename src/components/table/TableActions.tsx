@@ -17,6 +17,7 @@ import {
 } from "react";
 import { createPortal } from "react-dom";
 import { DotsIcon } from "@/components/icons";
+import { TABLE } from "@/constants/table";
 import { cn } from "@/lib/cn";
 import styles from "./Table.module.css";
 
@@ -78,10 +79,10 @@ export function TableActions({
     if (!trigger) return;
 
     const rect = trigger.getBoundingClientRect();
-    const menuWidth = 144;
-    const menuHeight = 90;
-    const gap = 4;
-    const edge = 8;
+    const menuWidth = TABLE.actionsMenuWidth;
+    const menuHeight = TABLE.actionsMenuHeight;
+    const gap = TABLE.actionsMenuGap;
+    const edge = TABLE.actionsMenuEdge;
 
     // Prefer staying inside the table scroll area; fall back to the viewport.
     const tableArea =

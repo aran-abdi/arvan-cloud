@@ -3,18 +3,25 @@
   align-items: center;
   box-sizing: border-box;
   opacity: 1;
-
   border: 0;
   outline: none;
-  background: transparent;
-
-  min-height: 0;
+  min-height: var(--toast-min-height);
+  padding: var(--toast-padding-y) var(--toast-padding-x);
+  border-radius: var(--toast-radius);
   box-shadow: var(--toast-shadow);
-  border-radius: 0;
-
   cursor: default;
   user-select: none;
   touch-action: manipulation;
+}
+
+.root[data-type="Success"] {
+  min-width: var(--toast-min-width-success);
+  background: var(--success-bg1-default);
+}
+
+.root[data-type="Error"] {
+  min-width: var(--toast-min-width-error);
+  background: var(--error-bg1-default);
 }
 
 .root[data-action="true"] {
@@ -25,12 +32,27 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 4px;
+  gap: var(--toast-title-description-gap);
 }
 
 .title,
 .description {
   font-family: var(--font-ui);
+  vertical-align: middle;
+}
+
+.title {
+  font-size: var(--toast-title-font-size);
+  font-weight: var(--toast-title-font-weight);
+  line-height: var(--toast-title-line-height);
+  letter-spacing: var(--toast-title-letter-spacing);
+}
+
+.description {
+  font-size: var(--toast-description-font-size);
+  font-weight: var(--toast-description-font-weight);
+  line-height: var(--toast-description-line-height);
+  letter-spacing: var(--toast-description-letter-spacing);
 }
 
 .root[data-type="Success"] .title,
@@ -42,4 +64,3 @@
 .root[data-type="Error"] .description {
   color: var(--error-fg1-default);
 }
-

@@ -8,6 +8,7 @@ export * from "./toast";
 export * from "./button";
 export * from "./menu";
 export * from "./pagination";
+export * from "./modal";
 export * from "./section";
 export * from "./sidebar";
 export * from "./header";

@@ -11,10 +11,11 @@
   background: transparent;
   text-decoration: none;
   font-family: var(--font-ui);
+  border-radius: var(--radius-button);
   transition:
-    background 120ms ease,
-    border-color 120ms ease,
-    color 120ms ease;
+    background var(--motion-duration-fast) var(--motion-easing-standard),
+    border-color var(--motion-duration-fast) var(--motion-easing-standard),
+    color var(--motion-duration-fast) var(--motion-easing-standard);
 }
 
 .root:disabled,

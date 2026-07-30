@@ -4,7 +4,6 @@ import type { CSSProperties, MouseEvent, ReactNode } from "react";
 import { useCallback } from "react";
 import { cn } from "@/lib/cn";
 import type { ModalSize } from "@/constants/modal";
-import { MODAL } from "@/constants/modal";
 import styles from "./Modal.module.css";
 
 export type ModalProps = {
@@ -62,7 +61,6 @@ export function Modal({
       aria-modal="true"
       className={cn(styles.backdrop, className)}
       onMouseDown={handleBackdropMouseDown}
-      style={{ background: MODAL.overlayBg }}
     >
       {panel}
     </div>

@@ -42,6 +42,23 @@
   --pt-neutral-t1-st5-default: #E6E6E6;
   --pt-neutral-t1-fg2-default: #4C4C4C;
 
+  /* Shared type / weight */
+  --font-weight-regular: 400;
+  --font-weight-medium: 450;
+  --font-weight-semibold: 600;
+  --type-letter-spacing-tight: -0.02em;
+
+  /* Motion */
+  --motion-duration-fast: 120ms;
+  --motion-easing-standard: ease;
+  --motion-duration-spin: 0.8s;
+
+  /* Z-index layers */
+  --z-sidebar: 30;
+  --z-header: 40;
+  --z-modal: 50;
+  --z-popover: 60;
+
   /* Spacing (from constants/spacing.ts) */
   --space-field-label-gap: 8px;
   --space-field-message-gap: 8px;
@@ -67,28 +84,46 @@
   /* Typography (from constants/typography.ts) */
   --type-label-font-size: 14px;
   --type-label-line-height: 20px;
-  --type-label-font-weight: 400;
-  --type-label-letter-spacing: -0.02em;
+  --type-label-font-weight: var(--font-weight-regular);
+  --type-label-letter-spacing: var(--type-letter-spacing-tight);
   --type-input-font-size: 14px;
   --type-input-line-height: 20px;
-  --type-input-font-weight: 400;
-  --type-input-letter-spacing: -0.02em;
+  --type-input-font-weight: var(--font-weight-regular);
+  --type-input-letter-spacing: var(--type-letter-spacing-tight);
   --type-message-font-size: 12px;
   --type-message-line-height: 16px;
-  --type-message-font-weight: 600;
-  --type-message-letter-spacing: -0.02em;
+  --type-message-font-weight: var(--font-weight-semibold);
+  --type-message-letter-spacing: var(--type-letter-spacing-tight);
 
   /* Toast */
   --toast-shadow: 0px 8px 40px 0px #2533433D;
+  --toast-min-height: 44px;
+  --toast-padding-y: 12px;
+  --toast-padding-x: 16px;
+  --toast-radius: 8px;
+  --toast-title-description-gap: 4px;
+  --toast-min-width-success: 121px;
+  --toast-min-width-error: 129px;
+  --toast-title-font-size: 14px;
+  --toast-title-line-height: 20px;
+  --toast-title-font-weight: var(--font-weight-semibold);
+  --toast-title-letter-spacing: var(--type-letter-spacing-tight);
+  --toast-description-font-size: 12px;
+  --toast-description-line-height: 16px;
+  --toast-description-font-weight: var(--font-weight-regular);
+  --toast-description-letter-spacing: var(--type-letter-spacing-tight);
 
   /* Pagination */
   --pagination-width: 360px;
   --pagination-radius: 8px;
   --pagination-border-width: 1px;
   --pagination-padding: 4px;
+  --pagination-gap: 4px;
   --pagination-item-size: 32px;
   --pagination-item-radius: 8px;
   --pagination-item-padding-x: 8px;
+  --pagination-ellipsis-width: 14px;
+  --pagination-ellipsis-height: 3.5px;
 
   /* Menu */
   --menu-element-width: 243px;
@@ -116,6 +151,7 @@
   --section-padding: 24px;
   --section-title-description-gap: 8px;
   --section-radius: 8px;
+  --section-border-width: 1px;
 
   /* Sidebar */
   --sidebar-width: 240px;
@@ -130,6 +166,25 @@
   --header-padding-y: 12px;
   --header-padding-x: 24px;
   --header-border-width: 1px;
+  --header-gap: 16px;
+
+  /* Modal */
+  --modal-overlay-bg: #00000052;
+  --modal-radius: 8px;
+  --modal-border-width: 1px;
+  --modal-header-height: 72px;
+  --modal-header-padding-y: 16px;
+  --modal-header-padding-x: 24px;
+  --modal-body-max-height: 456px;
+  --modal-body-padding: 24px;
+  --modal-footer-height: 72px;
+  --modal-footer-padding-y: 16px;
+  --modal-footer-padding-x: 24px;
+  --modal-footer-gap: 12px;
+  --modal-icon-wrapper-size: 56px;
+  --modal-icon-wrapper-padding: 16px;
+  --modal-icon-wrapper-radius: 96px;
+  --modal-icon-size: 24px;
 
   /* Table */
   --table-row-height: 48px;
@@ -139,16 +194,26 @@
   --table-row-bg: var(--neutral-bg1-default);
   --table-row-number-bg: var(--neutral-bg1-hover);
   --table-row-number-radius: 4px;
+  --table-row-number-size: 28px;
+  --table-row-number-padding-x: 8px;
   --table-header-font-size: 18px;
   --table-header-line-height: 24px;
+  --table-header-font-weight: var(--font-weight-semibold);
+  --table-header-letter-spacing: var(--type-letter-spacing-tight);
   --table-cell-font-size: 14px;
   --table-cell-line-height: 20px;
+  --table-cell-font-weight: var(--font-weight-regular);
+  --table-cell-strong-font-weight: var(--font-weight-semibold);
+  --table-cell-letter-spacing: var(--type-letter-spacing-tight);
   --table-cell-padding-x: 16px;
   --table-actions-trigger-size: 32px;
+  --table-actions-trigger-border-width: 1px;
+  --table-actions-trigger-radius: 12px;
   --table-actions-menu-width: 144px;
   --table-actions-menu-height: 90px;
   --table-actions-menu-padding: 8px;
   --table-actions-menu-gap: 4px;
   --table-actions-menu-radius: 12px;
+  --table-actions-menu-edge: 8px;
   --table-actions-menu-shadow: 0px 4px 16px rgba(0, 0, 0, 0.16);
 }

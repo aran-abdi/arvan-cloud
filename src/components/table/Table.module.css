@@ -18,9 +18,9 @@
   background: var(--table-header-bg);
   color: var(--neutral-fg1-default);
   font-size: var(--table-header-font-size);
-  font-weight: 600;
+  font-weight: var(--table-header-font-weight);
   line-height: var(--table-header-line-height);
-  letter-spacing: -0.02em;
+  letter-spacing: var(--table-header-letter-spacing);
   text-align: start;
   vertical-align: middle;
   height: var(--table-row-height);
@@ -45,8 +45,8 @@
   align-items: center;
   justify-content: center;
   box-sizing: border-box;
-  min-width: 28px;
-  height: 28px;
+  min-width: var(--table-row-number-size);
+  height: var(--table-row-number-size);
 }
 
 .row {
@@ -70,9 +70,9 @@
 .cell {
   color: var(--neutral-fg1-default);
   font-size: var(--table-cell-font-size);
-  font-weight: 400;
+  font-weight: var(--table-cell-font-weight);
   line-height: var(--table-cell-line-height);
-  letter-spacing: -0.02em;
+  letter-spacing: var(--table-cell-letter-spacing);
   text-align: start;
   vertical-align: middle;
   height: var(--table-row-height);
@@ -81,7 +81,7 @@
 }
 
 .cellStrong {
-  font-weight: 600;
+  font-weight: var(--table-cell-strong-font-weight);
 }
 
 .cellCenter {
@@ -98,17 +98,17 @@
   align-items: center;
   justify-content: center;
   box-sizing: border-box;
-  min-width: 28px;
-  height: 28px;
-  padding: 0 8px;
+  min-width: var(--table-row-number-size);
+  height: var(--table-row-number-size);
+  padding: 0 var(--table-row-number-padding-x);
   border-radius: var(--table-row-number-radius);
   background: var(--table-row-number-bg);
   color: var(--neutral-fg1-default);
   font-family: var(--font-ui);
   font-size: var(--table-cell-font-size);
-  font-weight: 400;
+  font-weight: var(--table-cell-font-weight);
   line-height: var(--table-cell-line-height);
-  letter-spacing: -0.02em;
+  letter-spacing: var(--table-cell-letter-spacing);
 }
 
 .actions {
@@ -126,15 +126,15 @@
   width: var(--table-actions-trigger-size);
   height: var(--table-actions-trigger-size);
   padding: 0;
-  border: 1px solid var(--neutral-st2-default);
-  border-radius: 12px;
+  border: var(--table-actions-trigger-border-width) solid var(--neutral-st2-default);
+  border-radius: var(--table-actions-trigger-radius);
   background: transparent;
   color: var(--neutral-fg1-default);
   cursor: pointer;
   outline: none;
   transition:
-    background 120ms ease,
-    border-color 120ms ease;
+    background var(--motion-duration-fast) var(--motion-easing-standard),
+    border-color var(--motion-duration-fast) var(--motion-easing-standard);
 }
 
 .actionsTrigger:hover {
@@ -149,7 +149,7 @@
 
 .actionsMenu {
   position: fixed;
-  z-index: 60;
+  z-index: var(--z-popover);
   display: flex;
   flex-direction: column;
   align-items: flex-start;

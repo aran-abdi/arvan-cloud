@@ -3,6 +3,7 @@ export const HEADER = {
   paddingY: 12,
   paddingX: 24,
   borderWidth: 1,
+  gap: 16,
 } as const;
 
 export const HEADER_VAR = {
@@ -10,4 +11,5 @@ export const HEADER_VAR = {
   paddingY: "var(--header-padding-y)",
   paddingX: "var(--header-padding-x)",
   borderWidth: "var(--header-border-width)",
+  gap: "var(--header-gap)",
 } as const;

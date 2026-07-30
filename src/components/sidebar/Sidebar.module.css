@@ -15,8 +15,9 @@
   position: fixed;
   top: var(--header-height);
   inset-inline-start: 0;
-  z-index: 30;
+  z-index: var(--z-sidebar);
   height: calc(100vh - var(--header-height));
+  overflow-x: hidden;
   overflow-y: auto;
 }
 
@@ -24,7 +25,8 @@
   display: flex;
   align-items: center;
   box-sizing: border-box;
-  width: var(--sidebar-item-width);
+  width: 100%;
+  max-width: 100%;
   min-height: var(--sidebar-item-min-height);
   padding: var(--sidebar-item-padding);
   border: 0;
@@ -36,8 +38,8 @@
   background: var(--neutral-bg1-default);
   color: var(--neutral-fg1-default);
   transition:
-    background 120ms ease,
-    color 120ms ease;
+    background var(--motion-duration-fast) var(--motion-easing-standard),
+    color var(--motion-duration-fast) var(--motion-easing-standard);
 }
 
 .item:hover:not(:disabled):not([data-selected="true"]) {

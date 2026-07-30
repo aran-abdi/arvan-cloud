@@ -35,7 +35,7 @@
   min-height: var(--section-header-min-height);
   padding: var(--section-padding);
   background: var(--neutral-bg1-default);
-  border-bottom: 1px solid var(--neutral-st3-default);
+  border-bottom: var(--section-border-width) solid var(--neutral-st3-default);
 }
 
 .sectionBody {

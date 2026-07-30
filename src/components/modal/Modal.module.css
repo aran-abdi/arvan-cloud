@@ -1,44 +1,44 @@
 .backdrop {
   position: fixed;
   inset: 0;
-  background: #00000052;
+  background: var(--modal-overlay-bg);
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 50;
+  z-index: var(--z-modal);
 }
 
 .panel {
   background: var(--neutral-bg1-default);
-  border-radius: 8px;
+  border-radius: var(--modal-radius);
   box-sizing: border-box;
   overflow: hidden;
 }
 
 .header {
-  height: 72px;
+  height: var(--modal-header-height);
   box-sizing: border-box;
-  border-bottom: 1px solid var(--neutral-st3-default, #E6E6E6);
-  padding: 16px 24px;
+  border-bottom: var(--modal-border-width) solid var(--neutral-st3-default);
+  padding: var(--modal-header-padding-y) var(--modal-header-padding-x);
 }
 
 .body {
   box-sizing: border-box;
-  max-height: 456px;
-  padding: 24px;
+  max-height: var(--modal-body-max-height);
+  padding: var(--modal-body-padding);
   opacity: 1;
   overflow: auto;
 }
 
 .footer {
-  height: 72px;
+  height: var(--modal-footer-height);
   box-sizing: border-box;
-  border-top: 1px solid var(--neutral-st3-default, #E6E6E6);
-  padding: 16px 24px;
+  border-top: var(--modal-border-width) solid var(--neutral-st3-default);
+  padding: var(--modal-footer-padding-y) var(--modal-footer-padding-x);
   display: flex;
   justify-content: end;
   align-items: center;
-  gap: 12px;
+  gap: var(--modal-footer-gap);
 }
 
 /* Text buttons default to width:100%; keep footer actions intrinsic. */
@@ -48,10 +48,10 @@
 }
 
 .statusIconWrapper {
-  width: 56px;
-  height: 56px;
-  padding: 16px;
-  border-radius: 96px;
+  width: var(--modal-icon-wrapper-size);
+  height: var(--modal-icon-wrapper-size);
+  padding: var(--modal-icon-wrapper-padding);
+  border-radius: var(--modal-icon-wrapper-radius);
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -69,5 +69,6 @@
 
 .statusIcon {
   display: block;
+  width: var(--modal-icon-size);
+  height: var(--modal-icon-size);
 }
-

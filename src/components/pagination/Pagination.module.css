@@ -2,7 +2,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 4px;
+  gap: var(--pagination-gap);
   box-sizing: border-box;
   width: var(--pagination-width);
   background: var(--neutral-bg1-default);
@@ -54,8 +54,8 @@
   background: var(--neutral-bg1-default);
   color: var(--neutral-fg1-default);
   transition:
-    background 120ms ease,
-    color 120ms ease;
+    background var(--motion-duration-fast) var(--motion-easing-standard),
+    color var(--motion-duration-fast) var(--motion-easing-standard);
 }
 
 .item:hover:not(:disabled):not([data-selected="true"]) {
@@ -107,8 +107,8 @@
 }
 
 .ellipsis svg {
-  width: 14px;
-  height: 3.5px;
+  width: var(--pagination-ellipsis-width);
+  height: var(--pagination-ellipsis-height);
   flex-shrink: 0;
   display: block;
 }

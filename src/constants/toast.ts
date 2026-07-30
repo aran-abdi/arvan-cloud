@@ -13,3 +13,14 @@ export const TOAST = {
   radiusLg: RADIUS[8],
 } as const;
 
+export const TOAST_VAR = {
+  minHeight: "var(--toast-min-height)",
+  paddingY: "var(--toast-padding-y)",
+  paddingX: "var(--toast-padding-x)",
+  titleToDescriptionGap: "var(--toast-title-description-gap)",
+  minWidthSuccess: "var(--toast-min-width-success)",
+  minWidthError: "var(--toast-min-width-error)",
+  radius: "var(--toast-radius)",
+  shadow: "var(--toast-shadow)",
+} as const;
+

@@ -1,6 +1,6 @@
 import type { ButtonHTMLAttributes, CSSProperties, ReactNode } from "react";
 import { SpinnerIcon } from "@/components/icons";
-import { BUTTON, FONT_SIZE, FONT_WEIGHT, LETTER_SPACING, LINE_HEIGHT } from "@/constants";
+import { FONT_SIZE, FONT_WEIGHT, LETTER_SPACING, LINE_HEIGHT } from "@/constants";
 import type { ButtonLayout, ButtonVariant } from "@/constants";
 import { cn } from "@/lib/cn";
 import styles from "./Button.module.css";
@@ -38,7 +38,6 @@ export function Button({
   };
 
   const rootStyle: CSSProperties = {
-    borderRadius: BUTTON.borderRadius,
     ...typographyStyle,
     ...style,
   };
