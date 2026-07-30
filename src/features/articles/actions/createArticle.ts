@@ -1,5 +1,6 @@
 "use server";
 
+import { redirect } from "next/navigation";
 import {
   createDummyJsonPost,
   DummyJsonApiError,
@@ -8,10 +9,10 @@ import {
 import { getAccessToken } from "@/features/auth/session";
 import { getArticlesMessages } from "../i18n/getArticlesMessages";
 import { defaultLocale } from "@/i18n";
+import { getArticlesNoticePath } from "../lib/paths";
 import type { CreateArticleFormValues } from "../types";
 
 export type CreateArticleResult =
-  | { ok: true; title: string; description: string }
   | { ok: false; title: string; description: string };
 
 function buildPostBody(values: CreateArticleFormValues): string {
@@ -49,12 +50,6 @@ export async function createArticleAction(
       userId: user.id,
       tags: values.tags,
     });
-
-    return {
-      ok: true,
-      title: create.success.title,
-      description: create.success.description,
-    };
   } catch (error) {
     if (error instanceof DummyJsonApiError) {
       return {
@@ -70,4 +65,6 @@ export async function createArticleAction(
       description: create.errors.createFailedDescription,
     };
   }
+
+  redirect(getArticlesNoticePath("created"));
 }

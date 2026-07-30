@@ -1,6 +1,14 @@
 import type { Metadata } from "next";
-import { ArticlesView, getArticlesMessages } from "@/features/articles";
+import {
+  ArticlesView,
+  getArticlesMessages,
+  parseArticlesNotice,
+} from "@/features/articles";
 import { defaultLocale, getDictionary } from "@/i18n";
+
+type ArticlesPageProps = {
+  searchParams: Promise<{ notice?: string | string[] }>;
+};
 
 export async function generateMetadata(): Promise<Metadata> {
   const [messages, dictionary] = await Promise.all([
@@ -13,6 +21,10 @@ export async function generateMetadata(): Promise<Metadata> {
   };
 }
 
-export default function ArticlesPage() {
-  return <ArticlesView page={1} />;
+export default async function ArticlesPage({ searchParams }: ArticlesPageProps) {
+  const params = await searchParams;
+
+  return (
+    <ArticlesView page={1} notice={parseArticlesNotice(params.notice)} />
+  );
 }

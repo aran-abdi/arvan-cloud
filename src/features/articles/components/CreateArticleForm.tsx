@@ -1,6 +1,5 @@
 "use client";
 
-import { useRouter } from "next/navigation";
 import { useMemo, useState, type FormEvent, type KeyboardEvent } from "react";
 import {
   Button,
@@ -15,7 +14,6 @@ import {
 import { cn } from "@/lib/cn";
 import { createArticleAction } from "../actions/createArticle";
 import { updateArticleAction } from "../actions/updateArticle";
-import { getArticlesPath } from "../lib/paths";
 import type {
   ArticleTagOption,
   ArticlesMessages,
@@ -63,7 +61,6 @@ export function CreateArticleForm({
   articleId,
   initialValues,
 }: CreateArticleFormProps) {
-  const router = useRouter();
   const { showToast } = useToast();
   const create = messages.create;
   const isEdit = mode === "edit";
@@ -142,17 +139,7 @@ export function CreateArticleForm({
           ? await updateArticleAction(articleId, nextValues)
           : await createArticleAction(nextValues);
 
-      if (result.ok) {
-        showToast({
-          type: "Success",
-          title: result.title,
-          description: result.description,
-        });
-        router.replace(getArticlesPath(1));
-        router.refresh();
-        return;
-      }
-
+      // Success redirects from the server action; only errors return here.
       showToast({
         type: "Error",
         title: result.title,

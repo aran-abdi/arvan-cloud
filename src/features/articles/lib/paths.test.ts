@@ -3,8 +3,10 @@ import {
   ARTICLES_BASE_PATH,
   ARTICLES_CREATE_PATH,
   getArticleEditPath,
+  getArticlesNoticePath,
   getArticlesPath,
   parseArticleIdParam,
+  parseArticlesNotice,
   parseArticlesPageParam,
 } from "./paths";
 
@@ -18,6 +20,31 @@ describe("getArticlesPath", () => {
   it("returns /articles/page/:page for pages above 1", () => {
     expect(getArticlesPath(2)).toBe(`${ARTICLES_BASE_PATH}/page/2`);
     expect(getArticlesPath(10)).toBe(`${ARTICLES_BASE_PATH}/page/10`);
+  });
+});
+
+describe("getArticlesNoticePath", () => {
+  it("appends notice query params for create and update", () => {
+    expect(getArticlesNoticePath("created")).toBe(
+      `${ARTICLES_BASE_PATH}?notice=created`
+    );
+    expect(getArticlesNoticePath("updated")).toBe(
+      `${ARTICLES_BASE_PATH}?notice=updated`
+    );
+  });
+});
+
+describe("parseArticlesNotice", () => {
+  it("accepts created and updated notices", () => {
+    expect(parseArticlesNotice("created")).toBe("created");
+    expect(parseArticlesNotice("updated")).toBe("updated");
+    expect(parseArticlesNotice(["created"])).toBe("created");
+  });
+
+  it("rejects invalid values", () => {
+    expect(parseArticlesNotice("deleted")).toBeNull();
+    expect(parseArticlesNotice(undefined)).toBeNull();
+    expect(parseArticlesNotice("")).toBeNull();
   });
 });
 
