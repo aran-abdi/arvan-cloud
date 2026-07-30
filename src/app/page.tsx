@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
+import { cn } from "@/lib/cn";
+import styles from "./Home.module.css";
 
 export const metadata: Metadata = {
   title: "Arvan — Dashboard & UI",
@@ -9,26 +12,35 @@ export const metadata: Metadata = {
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-white font-sans">
-      <main className="flex flex-col items-center gap-6 px-8 py-24 text-center">
-        <h1 className="text-3xl font-semibold tracking-tight text-[var(--neutral-fg1-default)]">
-          Arvan
-        </h1>
-        <p className="max-w-md text-[var(--neutral-fg2-default)]">
+    <div className={styles.page}>
+      <div className={cn(styles.glow, styles.glowPrimary)} aria-hidden />
+      <div className={cn(styles.glow, styles.glowSecondary)} aria-hidden />
+
+      <main className={styles.main}>
+        <div className={styles.brand}>
+          <div className={styles.mark}>
+            <Image
+              src="/brand/icon.png"
+              alt=""
+              width={48}
+              height={48}
+              className={styles.logo}
+              priority
+            />
+          </div>
+          <h1 className={styles.title}>Arvancloud Challenge</h1>
+        </div>
+
+        <p className={styles.copy}>
           Manage articles in the dashboard, or open the docs for contributor
           guides and the component library.
         </p>
-        <div className="flex flex-wrap items-center justify-center gap-6">
-          <Link
-            href="/login"
-            className="rounded-lg bg-[var(--primary-bg2-default)] px-5 py-3 font-semibold text-white"
-          >
+
+        <div className={styles.actions}>
+          <Link href="/login" className={cn(styles.cta, styles.ctaPrimary)}>
             Log in
           </Link>
-          <Link
-            href="/docs"
-            className="rounded-lg border border-[var(--neutral-st2-default)] px-5 py-3 font-semibold text-[var(--neutral-fg1-default)]"
-          >
+          <Link href="/docs" className={cn(styles.cta, styles.ctaSecondary)}>
             Open docs
           </Link>
         </div>
